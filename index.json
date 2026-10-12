@@ -296,5 +296,14 @@
     "project": "ai-talks",
     "url": "https://www.youtube.com/watch?v=pUF0o57YdL8",
     "minutes": 40
+  },
+  "GblUTiS6cdE": {
+    "folder": "2026-10-12-spring-data-jdbc",
+    "date": "2026-10-12",
+    "title": "Артемий Дегтярев — Spring Data JDBC: где мы находимся сейчас",
+    "speaker": "Joker — Конференция о будущем разработки",
+    "project": "",
+    "url": "https://www.youtube.com/watch?v=GblUTiS6cdE",
+    "minutes": 38
   }
 }
