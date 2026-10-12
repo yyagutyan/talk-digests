@@ -4,6 +4,7 @@ Short, readable versions of long talks, with the slides and code that matter.
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
+| 2026-10-12 | [Работа с нештатными ситуациями в космической технике](2026-10-12-talk/) · [video](https://www.youtube.com/watch?v=q7BtbygIUcc) | Joker — Конференция о будущем разработки | 49 min |
 | 2026-10-12 | [Никита Кириллов — Beyond @SpringBootApplication: создание собственных экосистем поверх Spring Boot](2026-10-12-beyond-springbootapplication-spring-boot/) · [video](https://www.youtube.com/watch?v=vr3f_Nlq1Wg) | Joker — Конференция о будущем разработки | 44 min |
 | 2026-10-11 | [The state of the tech industry in 2026 - LDX3 New York](2026-10-11-the-state-of-the-tech-industry-in-2026/) · [video](https://www.youtube.com/watch?v=Ru99FGJ_yuE) | The Pragmatic Engineer | 30 min |
 | 2026-10-11 | [The Hexagonal Hangover by Ties van de Ven](2026-10-11-the-hexagonal-hangover/) · [video](https://www.youtube.com/watch?v=m9viRAIRAUQ) | Ties van de Ven | 49 min |
