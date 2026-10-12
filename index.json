@@ -86,5 +86,13 @@
     "speaker": "Joker — Конференция о будущем разработки",
     "url": "https://www.youtube.com/watch?v=q7BtbygIUcc",
     "minutes": 49
+  },
+  "WAsW8RuWZuY": {
+    "folder": "2026-10-12-kotlin",
+    "date": "2026-10-12",
+    "title": "Глеб Минаев — А вы можете сказать, что все-таки такое «корутина» в Kotlin?",
+    "speaker": "Joker — Конференция о будущем разработки",
+    "url": "https://www.youtube.com/watch?v=WAsW8RuWZuY",
+    "minutes": 46
   }
 }
