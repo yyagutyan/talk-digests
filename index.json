@@ -305,5 +305,14 @@
     "project": "",
     "url": "https://www.youtube.com/watch?v=GblUTiS6cdE",
     "minutes": 38
+  },
+  "i8Spd1b3AEY": {
+    "folder": "2026-10-12-micrometer-grafana",
+    "date": "2026-10-12",
+    "title": "Рустам Курамшин — Мониторь это. Как писать свои метрики для Micrometer и Grafana",
+    "speaker": "Joker — Конференция о будущем разработки",
+    "project": "",
+    "url": "https://www.youtube.com/watch?v=i8Spd1b3AEY",
+    "minutes": 48
   }
 }
