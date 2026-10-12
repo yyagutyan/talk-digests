@@ -70,5 +70,13 @@
     "speaker": "Anders Norås",
     "url": "https://www.youtube.com/watch?v=am8adCMJQzk",
     "minutes": 49
+  },
+  "vr3f_Nlq1Wg": {
+    "folder": "2026-10-12-beyond-springbootapplication-spring-boot",
+    "date": "2026-10-12",
+    "title": "Никита Кириллов — Beyond @SpringBootApplication: создание собственных экосистем поверх Spring Boot",
+    "speaker": "Joker — Конференция о будущем разработки",
+    "url": "https://www.youtube.com/watch?v=vr3f_Nlq1Wg",
+    "minutes": 44
   }
 }
