@@ -102,5 +102,13 @@
     "speaker": "Joker — Конференция о будущем разработки",
     "url": "https://www.youtube.com/watch?v=9rx6CIXzCE4",
     "minutes": 50
+  },
+  "m82RaZcpcgU": {
+    "folder": "2026-10-12-transactional-outbox-postgresql",
+    "date": "2026-10-12",
+    "title": "Денис Цветцих — А сколько реализаций Transactional Outbox для PostgreSQL вы знаете?",
+    "speaker": "Joker — Конференция о будущем разработки",
+    "url": "https://www.youtube.com/watch?v=m82RaZcpcgU",
+    "minutes": 45
   }
 }
