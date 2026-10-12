@@ -4,6 +4,7 @@ Short, readable versions of long talks, with the slides and code that matter.
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
+| 2026-10-12 | [Your Agent Is a Lethal Trifecta (And What to Do About It) — Kim Maida, Keycard](2026-10-12-your-agent-is-a-lethal-trifecta-and-what/) · [video](https://www.youtube.com/watch?v=ws9XcGGPBDk) | AI Engineer | 25 min |
 | 2026-10-12 | [Денис Цветцих — А сколько реализаций Transactional Outbox для PostgreSQL вы знаете?](2026-10-12-transactional-outbox-postgresql/) · [video](https://www.youtube.com/watch?v=m82RaZcpcgU) | Joker — Конференция о будущем разработки | 45 min |
 | 2026-10-12 | [The Next Trillion Internet Users Still Don’t Have an Identity — Adi Singh, AgentMail](2026-10-12-the-next-trillion-internet-users-still-don-t/) · [video](https://www.youtube.com/watch?v=mBNVKkyfnE0) | AI Engineer | 17 min |
 | 2026-10-12 | [Работа с нештатными ситуациями в космической технике](2026-10-12-talk/) · [video](https://www.youtube.com/watch?v=q7BtbygIUcc) | Joker — Конференция о будущем разработки | 49 min |
