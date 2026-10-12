@@ -6,6 +6,7 @@ Projects: [profG](profg/)
 
 | Date | Talk | Speaker | Length | Project |
 |---|---|---|---|---|
+| 2026-10-12 | [Fraud Is Booming — Here’s Why](profg/2026-10-12-fraud-is-booming-here-s-why/) · [video](https://www.youtube.com/watch?v=CdSTmXokY0s) | Prof G Markets | 10 min | [profG](profg/) |
 | 2026-10-12 | [5 Stocks Are Carrying The Market — Here's How To Protect Yourself](profg/2026-10-12-5-stocks-are-carrying-the-market-here-s/) · [video](https://www.youtube.com/watch?v=OvpLb3512UQ) | Prof G Markets | 71 min | [profG](profg/) |
 | 2026-10-12 | [Your Agent Is a Lethal Trifecta (And What to Do About It) — Kim Maida, Keycard](2026-10-12-your-agent-is-a-lethal-trifecta-and-what/) · [video](https://www.youtube.com/watch?v=ws9XcGGPBDk) | AI Engineer | 25 min | |
 | 2026-10-12 | [We Let Our Financial Planners Write the Agents — Matthew Ragone, Range](2026-10-12-we-let-our-financial-planners-write-the-agents/) · [video](https://www.youtube.com/watch?v=gpmze-6ueGU) | AI Engineer | 9 min | |
