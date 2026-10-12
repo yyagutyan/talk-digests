@@ -94,5 +94,13 @@
     "speaker": "Joker — Конференция о будущем разработки",
     "url": "https://www.youtube.com/watch?v=WAsW8RuWZuY",
     "minutes": 46
+  },
+  "9rx6CIXzCE4": {
+    "folder": "2026-10-12-synchronized-thread-safety",
+    "date": "2026-10-12",
+    "title": "Михаил Поливаха — За пределами synchronized: на рубеже Thread Safety",
+    "speaker": "Joker — Конференция о будущем разработки",
+    "url": "https://www.youtube.com/watch?v=9rx6CIXzCE4",
+    "minutes": 50
   }
 }

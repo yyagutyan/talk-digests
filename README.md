@@ -5,6 +5,7 @@ Short, readable versions of long talks, with the slides and code that matter.
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
 | 2026-10-12 | [Работа с нештатными ситуациями в космической технике](2026-10-12-talk/) · [video](https://www.youtube.com/watch?v=q7BtbygIUcc) | Joker — Конференция о будущем разработки | 49 min |
+| 2026-10-12 | [Михаил Поливаха — За пределами synchronized: на рубеже Thread Safety](2026-10-12-synchronized-thread-safety/) · [video](https://www.youtube.com/watch?v=9rx6CIXzCE4) | Joker — Конференция о будущем разработки | 50 min |
 | 2026-10-12 | [Глеб Минаев — А вы можете сказать, что все-таки такое «корутина» в Kotlin?](2026-10-12-kotlin/) · [video](https://www.youtube.com/watch?v=WAsW8RuWZuY) | Joker — Конференция о будущем разработки | 46 min |
 | 2026-10-12 | [Никита Кириллов — Beyond @SpringBootApplication: создание собственных экосистем поверх Spring Boot](2026-10-12-beyond-springbootapplication-spring-boot/) · [video](https://www.youtube.com/watch?v=vr3f_Nlq1Wg) | Joker — Конференция о будущем разработки | 44 min |
 | 2026-10-11 | [The state of the tech industry in 2026 - LDX3 New York](2026-10-11-the-state-of-the-tech-industry-in-2026/) · [video](https://www.youtube.com/watch?v=Ru99FGJ_yuE) | The Pragmatic Engineer | 30 min |
