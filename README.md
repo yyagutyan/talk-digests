@@ -6,6 +6,7 @@ Projects: [profG](profg/)
 
 | Date | Talk | Speaker | Length | Project |
 |---|---|---|---|---|
+| 2026-10-12 | [This EU Firm Made Billions Buying Up Forgotten Tech](profg/2026-10-12-this-eu-firm-made-billions-buying-up-forgotten/) · [video](https://www.youtube.com/watch?v=ZdmnHQmG8vc) | Prof G Markets | 66 min | [profG](profg/) |
 | 2026-10-12 | [The Real Problem With Sydney Sweeney’s Ad](profg/2026-10-12-the-real-problem-with-sydney-sweeney-s-ad/) · [video](https://www.youtube.com/watch?v=Kss_qJoph-8) | Prof G Markets | 9 min | [profG](profg/) |
 | 2026-10-12 | [The FTC Is Investigating OpenAI — Here’s Why](profg/2026-10-12-the-ftc-is-investigating-openai-here-s-why/) · [video](https://www.youtube.com/watch?v=IAH9L_CXcI8) | Prof G Markets | 31 min | [profG](profg/) |
 | 2026-10-12 | [SpaceX Raised $111B — It Already Needs More](profg/2026-10-12-spacex-raised-111b-it-already-needs-more/) · [video](https://www.youtube.com/watch?v=9SAgLMahZm4) | Prof G Markets | 36 min | [profG](profg/) |
