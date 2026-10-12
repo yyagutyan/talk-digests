@@ -2,7 +2,7 @@
 
 Short, readable versions of long talks, with the slides and code that matter.
 
-Projects: [profG](profg/)
+Projects: [ai-talks](ai-talks/) · [profG](profg/)
 
 | Date | Talk | Speaker | Length | Project |
 |---|---|---|---|---|
@@ -14,6 +14,7 @@ Projects: [profG](profg/)
 | 2026-10-12 | [Cal Newport: The AI Industry Is Betting On The Wrong Kind Of AI](profg/2026-10-12-cal-newport-the-ai-industry-is-betting-on/) · [video](https://www.youtube.com/watch?v=WuIITyh_Q4g) | Prof G Markets | 77 min | [profG](profg/) |
 | 2026-10-12 | [“Big Short” Investor: One Company Could Break The AI Boom](profg/2026-10-12-big-short-investor-one-company-could-break-the/) · [video](https://www.youtube.com/watch?v=PJrq_bw7bPc) | Prof G Markets | 50 min | [profG](profg/) |
 | 2026-10-12 | [5 Stocks Are Carrying The Market — Here's How To Protect Yourself](profg/2026-10-12-5-stocks-are-carrying-the-market-here-s/) · [video](https://www.youtube.com/watch?v=OvpLb3512UQ) | Prof G Markets | 71 min | [profG](profg/) |
+| 2026-10-12 | [From Vibes to Production: Evaluating and Shipping AI Agents That Work 101 — Laurie Voss, Arize AI](ai-talks/2026-10-12-from-vibes-to-production-evaluating-and-shipping-ai/) · [video](https://www.youtube.com/watch?v=qZj7sqmidqA) | AI Engineer | 111 min | [ai-talks](ai-talks/) |
 | 2026-10-12 | [Your Agent Is a Lethal Trifecta (And What to Do About It) — Kim Maida, Keycard](2026-10-12-your-agent-is-a-lethal-trifecta-and-what/) · [video](https://www.youtube.com/watch?v=ws9XcGGPBDk) | AI Engineer | 25 min | |
 | 2026-10-12 | [We Let Our Financial Planners Write the Agents — Matthew Ragone, Range](2026-10-12-we-let-our-financial-planners-write-the-agents/) · [video](https://www.youtube.com/watch?v=gpmze-6ueGU) | AI Engineer | 9 min | |
 | 2026-10-12 | [Денис Цветцих — А сколько реализаций Transactional Outbox для PostgreSQL вы знаете?](2026-10-12-transactional-outbox-postgresql/) · [video](https://www.youtube.com/watch?v=m82RaZcpcgU) | Joker — Конференция о будущем разработки | 45 min | |

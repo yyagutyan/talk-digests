@@ -251,5 +251,14 @@
     "project": "profG",
     "url": "https://www.youtube.com/watch?v=ZdmnHQmG8vc",
     "minutes": 66
+  },
+  "qZj7sqmidqA": {
+    "folder": "ai-talks/2026-10-12-from-vibes-to-production-evaluating-and-shipping-ai",
+    "date": "2026-10-12",
+    "title": "From Vibes to Production: Evaluating and Shipping AI Agents That Work 101 — Laurie Voss, Arize AI",
+    "speaker": "AI Engineer",
+    "project": "ai-talks",
+    "url": "https://www.youtube.com/watch?v=qZj7sqmidqA",
+    "minutes": 111
   }
 }
