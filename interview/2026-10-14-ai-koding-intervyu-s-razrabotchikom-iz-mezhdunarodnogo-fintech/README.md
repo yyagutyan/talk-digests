@@ -1,44 +1,41 @@
 # AI кодинг интервью с разработчиком из международного FinTech
 
-*Как проходит AI-секция на собеседовании, что в ней проверяют и как работать с кодом, который написала нейросеть.*
+*Как проходит AI-секция на собеседовании: кандидат разбирает и рефакторит навайбкоженный Go-проект, а интервьюер оценивает, как он думает и проверяет работу нейросети.*
 
-Источник: [AI кодинг интервью с разработчиком из международного FinTech](https://www.youtube.com/watch?v=7KAvNMjbIqQ) · Александр Дмитриев · ШОРТКАТ — менторская программа · 1 ч 20 мин
+Источник: [AI кодинг интервью с разработчиком из международного FinTech](https://www.youtube.com/watch?v=7KAvNMjbIqQ) · Александр Дмитриев и Иван · ШОРТКАТ — менторская программа · 1 ч 20 мин
 
 ## Коротко
 
-AI-секции на собеседованиях пока не имеют устоявшегося формата, и непонятно, как оценивать кандидата. Интервьюер проверяет не знание стека, а ход мышления: как кандидат разбирает чужой код, сверяет документацию с реальностью и контролирует результат нейросети. Важно, потому что код от модели без проверки не должен попадать в прод, и инженер должен уметь это доказать.
+На AI-секции кандидату дают Go-проект, написанный джуном с помощью ИИ одним промптом. Сервис работает в проде, тестов нет, и его нужно понять и отрефакторить. Формат не привязан к языку и не имеет правильного ответа: оценивают системное техническое мышление и то, как кандидат проверяет результат нейросети. Это важно, потому что такой код нельзя менять без тестов, фиксирующих текущее поведение.
 
 ## Главное
 
-- AI-секция не привязана к языку и проверяет ход мышления кандидата, а не знание конкретного стека.
-- Сначала нужно понять, что делает код, сверив README с реальными исходниками, и только потом его менять.
-- Выводы анализа стоит фиксировать в файлах, чтобы было видно, на каких данных строятся выводы.
-- Перед рефакторингом кода, который уже работает в проде, его покрывают тестами на текущее поведение, а не полагаются на обещания модели.
-- План рефакторинга запрашивают в режиме без правок кода (plan mode), а тесты пишут по заранее составленной таблице спецификации с корнер-кейсами.
-- Главный навык при работе с ИИ — недоверие к нейросети: результаты проверяют детерминированно через линтеры, тесты, спецификации и перекрёстное ревью разными моделями.
-- Большую модель используют для архитектуры и планов, дешёвую — для мелких правок, а контекст закрывают по завершении задачи, чтобы не переплачивать за токены.
+- Сверяйте README с кодом через ИИ и фиксируйте расхождения в отдельные файлы: так видно, на каких данных модель строит выводы.
+- Перед рефакторингом покрывайте текущее поведение тестами и заранее перечисляйте корнер-кейсы, чтобы модель не раздувала тесты и не тратила токены.
+- Проверяйте тесты и диффы сами: мелкие локализованные тесты и небольшие изменения проверить проще; для spec-driven development удобнее табличные тесты.
+- Запрещайте модели чинить баги во время рефакторинга: баги фиксируйте отдельно, после рефакторинга, а в промпте явно указывайте, что код приложения не меняется.
+- Прогоняйте тесты с флагом -race: Claude заявил, что все тесты проходят, но детектор нашёл гонку в TestDoPayout_Postponed.
+- Давайте ИИ доступ к инфраструктуре только на чтение, потому что при записи модель может натворить дел.
+- Доводите задачу до микрокоммита и открывайте новое окно; возвращайтесь к старым окнам, когда меняется архитектура.
+- Главный навык — недоверие к нейросети: делайте результат детерминированным через линтеры, тесты, спеки и перепроверку, а для рутины берите дешёвые модели.
 
-## AI-секция проверяет ход мышления, а не знание стека
+## AI-секция: проверять README и фиксировать расхождения
 
-[▶ 00:00:14](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=14s)
+[▶ 00:00:00](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=0s)
 
-AI-секция не привязана к языку. Интервью проходит на Go, но те же принципы применимы к Java и другим языкам.
+**В:** Какой формат у AI-секции?
 
-Формат молодой: устоявшихся паттернов проведения пока нет, и правильных решений тоже нет. Цель — понять, как кандидат думает и что он делает в коде, и решить, подходит ли он компании.
+**О:** Она не привязана к языку. Устоявшихся паттернов и правильных решений нет: оценивают, как человек думает.
 
-## Зачем проверять, как разработчик использует AI
+**В:** Что нужно сделать кандидату Ивану?
 
-[▶ 00:01:02](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=62s)
-
-Кандидат Иван — Go-разработчик, около 6 лет в финтехе, последний год активно работает с AI. Интервьюер называет AI хайпом, но отмечает, что разработчики всё равно им пользуются. Поэтому важно проверять, как именно, чтобы не получить «обезьяну с гранатой на проде».
-
-Интервьюер попросил показать экран, чтобы увидеть, как кандидат работает с AI на реальном коде:
+**О:** Иван, Go-разработчик с 6 годами в финтехе, разбирает проект, навайбкоженный джуном одним промптом. Задача: понять его и отрефакторить, потому что такой код на проде недопустим.
 
 ```go
-    "sort"
-    "strconv"
-    "strings"
-    "time"
+	"sort"
+	"strconv"
+	"strings"
+	"time"
 )
 
 // служебные операции
@@ -46,202 +43,70 @@ AI-секция не привязана к языку. Интервью прох
 
 // handleRecalc - пересчёт производных величин из первичных записей
 func handleRecalc(w http.ResponseWriter, r *http.Request) {
-    what := r.URL.Query().Get("what")
-    if what == "" {
-        what = "all"
-    }
-    changed = 0
-    report := []string{}
+	what := r.URL.Query().Get("what")
+	if what == "" {
+		what = "all"
+	}
+	changed = 0
+	report := []string{}
 
-    if what == "all" || what == "volume" {
-        for _, g := range guilds {
-            old := g.Volume[time.Now().Format("2006-01")]
-            fresh := map[string]float64{}
-            for _, x := range runs {
-                if x.GuildID == g.ID {
-                    continue
-
-last login: Thu Sep 24 12:49:49 on ttys004
-/Users/ishimin/.iterm2_shell_integration.zsh:32: bad floating point constant
-ishimin@MacBook-Air-2 arcadia %
+	if what == "all" || what == "volume" {
+		for _, g := range guilds {
+			old = g.Volume[time.Now().Format("2006-01")]
+			fresh := map[string]float64{}
+			for _, x := range runs {
+				if x.GuildID == g.ID {
+					continue
 ```
 
-*[▶ 00:02:08](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=128s) · Go handleRecalc code in IDE*
+*[▶ 00:02:08](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=128s) · handleRecalc Go code in IDE editor*
 
-## Сначала понять, что делает код, и только потом менять его
+**В:** С чего начать анализ?
 
-[▶ 00:01:56](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=116s)
+**О:** Иван открыл README: сервис работает в бою, тестов нет.
+README перечисляет подсистемы и команды запуска.
+Он попросил Claude сверить код с README и записать расхождения в отдельный каталог.
 
-Кандидату дают проект, который джун сгенерировал одним промптом. Задача: выяснить, что он делает, и по возможности отрефакторить, потому что такой код не должен попадать на прод. Начинать предлагается с анализа поведения, а не с правок.
+![README: service scope, history, run commands](images/01-s007.webp)
+*[▶ 00:02:34](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=154s) · README: service scope, history, run commands*
 
-README задаёт картину: команды запуска и таблица подсистем, от рейдов и выплат до войн гильдий и фракций.
+![CoderPad README subsystems and terminal](images/02-s011.webp)
+*[▶ 00:03:42](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=222s) · CoderPad README subsystems and terminal*
 
-```bash
-go run coderpad          # HTTP-сервер на :8080, список ручек на GET /
-go run coderpad -demo    # сквозной демо-сценарий по всем подсистемам
-go test ./...
-go test -race ./...
-```
+![Prompt asking to compare code against README](images/03-s010.webp)
+*[▶ 00:03:25](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=205s) · Prompt asking to compare code against README*
 
-![CoderPad README: run commands and subsystems](images/01-s006.webp)
-*[▶ 00:02:21](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=141s) · CoderPad README: run commands and subsystems*
+**В:** Что отметил интервьюер?
 
-README также сообщает главное для рефакторинга: тестов нет, а сервис уже работает в бою.
+**О:** Недоверие README и фиксацию расхождений в каталог: так видно, на каких данных AI строит выводы.
 
-```bash
-go run coderpad          # HTTP-сервер на :8080, список ручек на GET /
-go run coderpad -demo    # сквозной демо-сценарий по всем подсистемам
-go test ./...
-go test -race ./...
-```
+**В:** Какой у Ивана опыт с AI?
 
-![Project overview and subsystem table](images/02-s007.webp)
-*[▶ 00:02:34](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=154s) · Project overview and subsystem table*
+**О:** Начинал с Copilot для автодополнения и рутины, затем работал с Claude Sonnet и Opus; простые задачи отдаёт дешёвым моделям. Оркестрация ручная: большая модель для архитектуры и планов, маленькая для локальных задач. Он признал, что это может спорить с экономией токенов, но качество, по его ощущению, выше.
 
-## Сверка README с кодом через Claude
+**В:** Что сделал агент?
 
-[▶ 00:02:37](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=157s)
+**О:** По выводу AI, Claude решил сам прочитать около 5000 строк Go, начиная с main.go, и нашёл расхождения в main.go и market.go.
+Затем агент предложил сборку, vet и демо-запуск для проверки находок и ждёт подтверждения.
 
-Перед анализом Claude запускает команды из README: сервер на `:8080`, демо-сценарий и тесты с `-race`.
+![Agent reading README rules and planning code review](images/04-s012.webp)
+*[▶ 00:04:03](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=243s) · Agent reading README rules and planning code review*
 
-```bash
-…go run coderpad -demo    # сквозной демо-сценарий по всем подсистемам
-go test ./...
-go test -race ./...
-```
+![Claude asks approval to build, vet and run the demo](images/05-s019.webp)
+*[▶ 00:07:03](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=423s) · Claude asks approval to build, vet and run the demo*
 
-Подсистемы из README описаны таблицей: от рейдов и выплат в `main.go` до пересчётов в `admin.go`.
-
-![Full subsystem table and Claude prompt](images/03-s008.webp)
-*[▶ 00:02:52](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=172s) · Full subsystem table and Claude prompt*
-
-Запрос: сравнить код с README, подсветить расхождения и записать их в каталог `reviews`.
-
-![Prompt to compare code with README](images/04-s010.webp)
-*[▶ 00:03:25](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=205s) · Prompt to compare code with README*
-
-Агент сначала читает структуру проекта и README.
-
-![CoderPad README commands and subsystem table](images/05-s011.webp)
-*[▶ 00:03:42](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=222s) · CoderPad README commands and subsystem table*
-
-## Недоверие README и фиксация выводов в файлах
-
-[▶ 00:03:31](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=211s)
-
-Главный плюс кандидата: он понимает, что README может расходиться с кодом, и проверяет правила по исходникам. Агент пересказывает правила из README и решает читать код сам.
-
-```bash
-cat .claude/settings.local.json; go version; ls src/*_test.go 2>/dev/null
-```
-
-![Agent summarizes README rules and plans to read code](images/06-s012.webp)
-*[▶ 00:04:03](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=243s) · Agent summarizes README rules and plans to read code*
-
-Перед чтением кода агент проверяет окружение: разрешённые команды и версию Go.
-
-```json
-{
-  "permissions": {
-    "allow": [
-      "Bash(go version *)",
-      "Bash(go build *)",
-      "Bash(go vet *)",
-      "Bash(go run *)",
-      "Bash(gofmt -l .)",
-      "Bash(gofmt -w engine/runner.go)",
-      "Bash(python3 -)",
-      "Bash(go test *)",
-      "Artifact",
-      "Bash(curl -s localhost:8099/audit)",
-      "Bash(pkill -f \"arcadia -port 8098\")",
-      "Bash(pkill -f \"coderpad -port 8099\")",
-      "Bash(pkill -f \"exe/coderpad\")",
-      "Bash(curl -s -m 2 localhost:8099/health)"
-    ]
-  }
-}
-```
-
-*[▶ 00:04:24](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=264s) · Agent permissions config and go version check*
-
-README описывает много правил: гильдии, рейды, валюты, примеры запросов.
-
-```bash
-curl -XPOST localhost:8080/run   -d '{"guild":"EMBER","handle":"Arwen","loot":"1500"}'
-curl -XPOST localhost:8080/craft -d '{"guild":"EMBER","handle":"Arwen","recipe":"SMELT","times":5}'
-curl localhost:8080/digest?tag=EMBER
-curl localhost:8080/audit
-```
-
-![README CLI examples and domain rules](images/07-s014.webp)
-*[▶ 00:04:33](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=273s) · README CLI examples and domain rules*
-
-Второй плюс: **выводы фиксируются детерминированно**, в каталог. Так видно, на каких данных ИИ строит выводы. Это полезно для истории, для контекста в будущем и для решения, что коммитить в репозиторий.
-
-## Copilot для рутины, Opus для основной работы, дешёвые модели для простого кодинга
-
-[▶ 00:04:28](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=268s)
-
-Первым инструментом был Copilot: он дописывал код и закрывал рутину вроде JSON-заготовок. Основной стала линейка Claude, Sonnet и Opus. Opus остаётся главной моделью, а для простого «обезьяньего» кодинга он подключает что-то дешевле.
-
-В Claude Code агент читает файлы проекта по одному и отчитывается о прогрессе.
-
-![Agent reads market, crafting, war, territory files](images/08-s015.webp)
-*[▶ 00:05:04](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=304s) · Agent reads market, crafting, war, territory files*
-
-Параллельно он сверяет файлы с таблицей подсистем.
-
-![Claude Code reads Arcadia subsystem files](images/09-s016.webp)
-*[▶ 00:05:15](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=315s) · Claude Code reads Arcadia subsystem files*
-
-Перед финалом он перечисляет оставшиеся файлы: bank, digest, admin.
-
-![Claude Code reads contracts, factions, bank files](images/10-s017.webp)
-*[▶ 00:05:22](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=322s) · Claude Code reads contracts, factions, bank files*
-
-## Большая модель для архитектуры, дешёвая для мелочей
-
-[▶ 00:05:24](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=324s)
-
-Оркестрация ручная и интуитивная.
-
-Планы, архитектуру, организацию кода и аналитику отдаёт большой модели, мелкие локальные задачи — дешёвым.
-
-Это может спорить со стоимостью токенов, но качество результата, по его ощущению, выше.
-
-Большая модель читает весь код, сверяя его с README.
-
-![Arcadia README and agent reading source files](images/11-s021.webp)
-*[▶ 00:07:47](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=467s) · Arcadia README and agent reading source files*
-
-Затем просит разрешение собрать проект и прогнать демо, чтобы подтвердить находки на живом поведении.
-
-![Claude Code asks to run build, vet, demo](images/12-s019.webp)
-*[▶ 00:07:03](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=423s) · Claude Code asks to run build, vet, demo*
-
-## Один пакет и 1500 строк в main.go
+## Сверка README с кодом через ИИ
 
 [▶ 00:07:35](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=455s)
 
-Агент перечисляет подсистемы и ручки экономики MMO: рейды, аукцион, крафт, войны, территории, банк. Всё лежит в одной папке.
+**В:** Какая задача стояла перед кандидатом?
 
-```bash
-curl -XPOST localhost:8080/run   -d '{"guild":"EMBER","handle":"Arwen","loot":"
-curl -XPOST localhost:8080/craft -d '{"guild":"EMBER","handle":"Arwen","recipe"
-curl localhost:8080/digest?tag=EMBER
-curl localhost:8080/audit
-
-mkdir -p /tmp/arcadia_verify && cp /Users/ishimin/dev/arcadia/src/*.go /Users/ishimin/dev/arcadia/src/go.mod /Users/ishimin/dev/arcadia/src/go.sum /tmp/arcadia_verify/ && ls /tmp/arcadia_verify
-```
-
-![Subsystem table, curl examples, JSON verification output](images/13-s022.webp)
-*[▶ 00:08:27](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=507s) · Subsystem table, curl examples, JSON verification output*
-
-По мнению спикера, даже джун на вайбкодинге должен понимать структуру проекта. Файл main.go на 1500 строк держит обработчики, замок и флаги запуска.
+**О:** Понять, что делает навайбкоженный проект, и зафиксировать его функции, не сломав работающий на проде код. Сразу заметили, что всё лежит в одной папке, а `main.go` занимает 1500 строк.
 
 ```go
-// locked выполняет … под общим замком
+}
+
+// locked выполняет функцию … под общим замком
 func locked(f func()) {
 	worldMu.Lock()
 	defer worldMu.Unlock()
@@ -268,31 +133,34 @@ func main() {
 	if os.Getenv("STRICT") == "1" {
 ```
 
-*[▶ 00:08:41](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=521s) · main.go: locked wrapper, Handler, and main flags*
+*[▶ 00:08:41](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=521s) · main.go: locked helper and main() flags*
 
-Агент без запроса пишет тесты. Спикер просит только анализ с результатом в `.reviews`.
+**В:** Как искали расхождения между документацией и кодом?
+
+**О:** Попросили ИИ сверить правила из README с кодом и сохранить расхождения в файлы. Когда агент начал писать тесты, кандидат остановил его: нужен был только анализ в `.reviews`.
 
 ```go
-…
 }
 
-// …
+// … (comment)
 func TestRecalcDrift(t *testing.T) {
 	reset()
-	call(t, "POST", "/war", `{"a":"IRON","b":"C…`)
-	call(t, "POST", "/war/battle", `{"war":1,"m…`)
-	call(t, "POST", "/war/battle", `{"war":1,"m…`)
-	call(t, "GET", "/faction/grant?tag=EMBER&fa…")
-	call(t, "GET", "/faction/buy?tag=EMBER&hand…")
+	call(t, "POST", "/war", `{"a":"IRON","b":"C…
+	call(t, "POST", "/war/battle", `{"war":1,"m…
+	call(t, "POST", "/war/battle", `{"war":1,"m…
+	call(t, "GET", "/faction/grant?tag=EMBER&fa…
+	call(t, "GET", "/faction/buy?tag=EMBER&hand…
 	_, b := call(t, "GET", "/admin/recalc", "")
-	t.Logf("recalc: %s EMBER MINERS rep after=…
+	t.Logf("recalc: %s: EMBER MINERS rep after=…
 }
 
-// Список ручек в GET /
+// … (comment)
 func TestRootList(t *testing.T) {
 	reset()
 	_, b := call(t, "GET", "/", "")
-	for _, p := range []string{"/market/close", "/quest/close", "/faction/grant", "/ter…", "/admin/purge", "/admin/expire"} {
+	for _, p := range []string{"/market/close", …
+		"/quest/close", "/faction/grant", "/ter…
+		"/admin/purge", "/admin/expire"} {
 		if !strings.Contains(b, " "+p+"\n") {
 			t.Logf("missing in GET /: %s", p)
 		}
@@ -300,272 +168,88 @@ func TestRootList(t *testing.T) {
 }
 ```
 
-![Agent asks to allow test file write](images/14-s024.webp)
-*[▶ 00:09:27](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=567s) · Agent asks to allow test file write*
+*[▶ 00:09:38](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=578s) · Generated tests with chat prompt to stop writing them*
 
-## Остановить агента, когда он уходит в тесты без запроса
+**В:** Что было в правилах, которые сверяли?
 
-[▶ 00:09:01](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=541s)
+**О:** Правила налога гильдии, казны и эскроу, описанные в README. Кандидат признал, что быстро осмыслить их не получается, поэтому их разбор отдали нейросети.
 
-Агента нужно останавливать, когда он уходит в сторону: «не пиши тесты, нужен только анализ».
+![Предметная область и налог гильдии](images/06-s027.webp)
+*[▶ 00:10:08](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=608s) · Предметная область и налог гильдии*
 
-![User tells agent: analysis only, no tests](images/15-s025.webp)
-*[▶ 00:09:38](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=578s) · User tells agent: analysis only, no tests*
+![Казна, эскроу и объём гильдии](images/07-s029.webp)
+*[▶ 00:10:35](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=635s) · Казна, эскроу и объём гильдии*
 
-Весь код лежит в одной папке, а `main.go` занимает 1500 строк.
-
-![Module file table and API curl examples](images/16-s026.webp)
-*[▶ 00:09:47](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=587s) · Module file table and API curl examples*
-
-Claude выписывает правила предметной области: казна, эскроу, рейды, валюта GOLD. Ведущий зачитывает их вслух.
-
-![Domain glossary and guild tax rules](images/17-s027.webp)
-*[▶ 00:10:08](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=608s) · Domain glossary and guild tax rules*
-
-Агент выводит главные расхождения README и кода.
-
-![Domain rules with review notes](images/18-s028.webp)
-*[▶ 00:10:21](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=621s) · Domain rules with review notes*
-
-Расхождения сохраняются в файл, и агент ждёт подтверждения записи.
-
-![Tax, escrow, and treasury rules with approval prompt](images/19-s029.webp)
-*[▶ 00:10:35](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=635s) · Tax, escrow, and treasury rules with approval prompt*
-
-Каждое расхождение получает уровень важности.
-
-![Code review report: scale and file list](images/20-s030.webp)
-*[▶ 00:11:04](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=664s) · Code review report: scale and file list*
-
-## Функции кода фиксируем отчётом и data flow диаграммами
-
-[▶ 00:10:43](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=643s)
-
-Модель разложила код по подсистемам. Теперь просим краткий отчёт о функциях кода с data flow диаграммами.
-
-![Review report files table and key findings](images/21-s031.webp)
-*[▶ 00:11:39](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=699s) · Review report files table and key findings*
-
-Понимать каждую функцию полностью не нужно, важно зафиксировать их для дальнейшей работы.
-
-![Findings list and bank review section](images/22-s034.webp)
-*[▶ 00:12:11](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=731s) · Findings list and bank review section*
-
-Выводы основаны на чтении кода и одном прогоне демо. Где расхождение видно в выводе демо, оно помечено как подтверждённое.
-
-![Claude agent report on code review files](images/23-s036.webp)
-*[▶ 00:12:46](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=766s) · Claude agent report on code review files*
-
-Так подтверждён налог отката у EMBER: 21.75 вместо 19.58.
-
-![More confirmed divergences in code review](images/24-s037.webp)
-*[▶ 00:12:59](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=779s) · More confirmed divergences in code review*
-
-Обзор с диаграммами Mermaid записан в `.reviews/00-overview.md` и добавлен в индекс.
-
-![Remaining findings and request for overview diagrams](images/25-s038.webp)
-*[▶ 00:13:27](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=807s) · Remaining findings and request for overview diagrams*
-
-## Не сломать прод: сначала зафиксировать фактическое поведение
-
-[▶ 00:13:28](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=808s)
-
-Рефакторинг должен одновременно сохранить работающий в проде код, который уже протестирован, и сделать его понятным. Поэтому сначала фиксируется фактическое поведение: агент пишет обзор с диаграммами потоков данных.
-
-![Overview doc with dataflow diagrams and summary](images/26-s039.webp)
-*[▶ 00:14:12](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=852s) · Overview doc with dataflow diagrams and summary*
-
-Диаграммы описывают реальное поведение, включая расхождения с README. Ссылки на расхождения ведут в файлы ревью.
-
-![Overview contents and factual-behavior note](images/27-s040.webp)
-*[▶ 00:14:22](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=862s) · Overview contents and factual-behavior note*
-
-Обзор сохранён в `.reviews/00-overview.md` и связан из индекса `.reviews/README.md`.
-
-![Arcadia overview in Claude Agent session](images/28-s041.webp)
-*[▶ 00:14:56](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=896s) · Arcadia overview in Claude Agent session*
-
-## Один процесс и один мьютекс на всё состояние
-
-[▶ 00:14:40](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=880s)
-
-Проект на Go — один процесс без базы данных, около 5000 строк. Состояние лежит в глобальных `map` и срезах в памяти, после рестарта собирается заново.
-
-```shell
-Last login: Thu Sep 24 12:49:49 on ttys004
-/Users/ishimin/.iterm2_shell_integration.zsh:32: bad floating point constant
-ishimin@MacBook-Air-2 arcadia %
+```bash
+curl -XPOST localhost:8080/run   -d '{"guild":"EMBER","handle":"Arwen","loot":"
+curl -XPOST localhost:8080/craft -d '{"guild":"EMBER","handle":"Arwen","recipe"
+curl localhost:8080/digest?tag=EMBER
+curl localhost:8080/audit
 ```
 
-*[▶ 00:16:57](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1017s) · Prompt to build prioritized fix plan*
+*[▶ 00:08:27](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=507s) · Subsystems table and curl examples*
 
-Вся конкурентность держится на мьютексе `worldMu`: HTTP-запросы идут под `withLock`, фоновые горутины берут его через `locked()`, а четыре горутины с `time.Sleep` закрывают эскроу, лоты, войны и осады.
+**В:** Как оценивали отчёт ИИ?
 
-![Code-level behavior: startJobs, timers, worldMu](images/29-s042.webp)
-*[▶ 00:15:14](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=914s) · Code-level behavior: startJobs, timers, worldMu*
+**О:** Это вывод ИИ. Расхождения делятся по уровням от критичного до неоднозначного. Ментор одобрил фиксацию расхождений в файлы, а не выяснение всех деталей вручную; ИИ, например, указал, что покупатель на аукционе ничего не платит.
 
-```shell
-…49:49 on ttys004
-…ll_integration.zsh:32: bad floating point constant
-…dia %
+```markdown
+Дата: 2026-09-24. Версия кода: `v1.14.3-hotfix7` (`src/main.go:20`).
+
+## Как проводилось
+- Прочитан весь код в `src/*.go` (~5 000 строк) и сопоставлен с разделом «Правила, как они описаны в документации продукта» из корневого `README.md`.
+- Запущен `go run coderpad -demo`. Где расхождение видно в выводе демо, это отмечено как **подтверждено демо**. Остальное установлено чтением кода.
+- Тесты не писались, код не менялся.
+
+## Шкала
+
+| Уровень | Смысл |
+|---|---|
+| 🔴 Критично | Деньги/ценности создаётся или исчезают, правило README нарушено напрямую |
+| 🟠 Важно | Правило README реализовано иначе, результат расчёта отличается |
+| 🟡 Незначительно | Краевые случаи, округления, несогласованность между ручками |
+| ⚪ Не описано | Поведение есть в коде, в README его нет (стоит задокументировать или убрать) |
+| ❓ Неоднозначно | README допускает разные прочтения, нужно решение владельца продукта |
+
+## Файлы
 ```
 
-Ручки на `net/http` не авторизованы, JSON собирается через `fmt.Sprintf`.
+*[▶ 00:11:04](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=664s) · Отчёт ревью: шкала и файлы*
 
-![Read-only handlers table and architecture bullets](images/30-s043.webp)
-*[▶ 00:15:47](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=947s) · Read-only handlers table and architecture bullets*
-
-```shell
-…49:49 on ttys004
-…ll_integration.zsh:32: bad floating point constant
-```
-
-## Сначала план исправлений, потом правки кода
+## План без правок кода и тесты до рефакторинга
 
 [▶ 00:16:11](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=971s)
 
-Вместо немедленной правки кода предлагается сначала попросить нейросеть составить приоритизированный план устранения проблем, который приведёт код в соответствие с желаемым поведением из ревью-документов. Артефакты, сгенерированные моделью, при этом принимаются как верные.
+**В:** Как проверить, что рефакторинг не сломает код?
 
-![IDE with review doc and AI prompt for fix plan](images/31-s046.webp)
-*[▶ 00:17:01](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1021s) · IDE with review doc and AI prompt for fix plan*
+**О:** Иван просит у модели только план без правок и добавляет, что код уже в проде. Доверять модели в этом нельзя: нужны тесты, фиксирующие текущее поведение, до рефакторинга.
 
-Промпт фиксирует границу: только план, без изменения кода. Иначе модель сразу начнёт перепиливать код, а он уже работает в проде.
+![IDE chat: prompt says existing behavior must not change](images/08-s048.webp)
+*[▶ 00:18:24](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1104s) · IDE chat: prompt says existing behavior must not change*
 
-![IDE with AI chat requesting a fix plan](images/32-s047.webp)
-*[▶ 00:17:43](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1063s) · IDE with AI chat requesting a fix plan*
+**В:** Как писать тесты с ИИ?
 
-## Тесты на текущее поведение вместо веры в ИИ
+**О:** Модель рвётся покрывать всё подряд, и это жжёт токены. Иван заранее перечисляет корнер-кейсы и сам просматривает тесты. Тесты находили гонки и деление на ноль.
 
-[▶ 00:17:21](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1041s)
+**В:** Как контролировать, что покрыто?
 
-Сначала ИИ просят составить только план, без правок кода. В промпт добавляют, что код уже в проде и существующую функциональность менять нельзя.
+**О:** Интервьюер предлагает spec-driven development: таблица тест-кейсов, по которой ИИ пишет тесты. Иван считает таблицу лишним шагом, её можно набросать прямо в чате.
 
-![AI assistant asked for prioritized plan without changes](images/33-s048.webp)
-*[▶ 00:18:24](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1104s) · AI assistant asked for prioritized plan without changes*
+![Doc tables and agent prompt to write tests](images/09-s051.webp)
+*[▶ 00:23:09](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1389s) · Doc tables and agent prompt to write tests*
 
-Но обещанию модели не стоит верить на слово: сохранность поведения нужно проверять детерминированно. Поэтому в план добавляют шаг с тестами, которые покрывают текущее рабочее поведение.
+**В:** Как это связано с проектированием?
 
-## Тесты до рефакторинга: зафиксировать текущее поведение
+**О:** Это проектирование сверху вниз: эпик, подэпики, задачи с критериями приёмки и definition of done. В ходе разговора модель затупила на промпте, который не является настоящей спецификацией.
 
-[▶ 00:18:15](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1095s)
+![Test-writing prompt sent again in agent panel](images/10-s052.webp)
+*[▶ 00:24:36](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1476s) · Test-writing prompt sent again in agent panel*
 
-Если код в проде без тестов, любое изменение остаётся непроверяемым. Поэтому сначала покрывают **текущую функциональность** тестами, и это шаг до рефакторинга, а не часть его плана. Ориентир — таблицы README.
-
-```text
-Ручки чтения и отчётов:
-/report, /csv — рейды гильдии по дням
-/player, /leaderboard — карточка и рейтинг игроков
-/digest — сводка по всем подсистемам
-/world — казна, объём, рейтинг, земли и лига по всем гильдиям
-/audit — казна, пересчитанная из записей, и разница с текущей
-/stats, /chronicle, /admin/dump, /search — счетчики, журнал событий, выгрузка, поиск
-
-last login: Thu Sep 24 12:49:49 on ttys004
-/Users/ishimin/.iterm2_shell_integration.zsh:32: bad floating point constant
-ishimin@MacBook-Air-2 arcadia %
-```
-
-*[▶ 00:19:19](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1159s) · IDE with README tables and AI chat prompt*
-
-Промт должен быть коротким: длинный многофункциональный запрос легко собьёт модель. Достаточно «напишем тесты, покрывающие текущую функциональность». Тесты по умолчанию идут отдельными файлами; структуру позже выровняют по сущностям.
-
-![Claude Code session: test-writing prompt, Russian docs](images/34-s051.webp)
-*[▶ 00:23:09](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1389s) · Claude Code session: test-writing prompt, Russian docs*
-
-## Тесты с нейросетью: осознанность важнее объёма
-
-[▶ 00:19:45](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1185s)
-
-Нейросеть рвётся писать тест на каждый чих, её приходится останавливать. Тесты могут врать и пропускать кейсы, поэтому их нужно осознавать:
-
-- Специфицировать корнер-кейсы в критичных местах и указать, какой баг чинится.
-- Просматривать тест глазами.
-- Уточнять промтом покрытие до более точного.
-
-Избыток тестов даёт token burn, но тесты ловили гонки, встречный перевод и деление на ноль.
-
-## Спецификация тест-кейсов до генерации тестов
-
-[▶ 00:21:51](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1311s)
-
-Spec-driven development для тестов: сначала таблица со спецификацией всех тест-кейсов, включая корнер-кейсы, затем нейросеть реализует тесты по ней. По словам ведущего, такой подход распространён в Сбере.
-
-Написание тестов — примитивная техническая задача, и нейросеть справляется с ней легко. Главная ценность спеки в другом: детерминированно видно, что проверено, а что нет.
-
-Таблицу можно набросать прямо в чате с Claude. Спеку либо пишут до кода, либо достраивают после. В этом эпизоде промт на тесты пришлось отправить повторно: модель зависла.
-
-![Claude Code session: test prompt re-entered](images/35-s052.webp)
-*[▶ 00:24:36](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1476s) · Claude Code session: test prompt re-entered*
-
-## Проектирование сверху вниз: от системы к задачам
-
-[▶ 00:23:16](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1396s)
-
-Это проектирование сверху вниз: сначала описываете, что система должна делать, затем делите её на модули, подсистемы и критерии приёмки, пока не дойдёте до мелких компонентов реализации. Это хорошо ложится в AI-driven подход: при полной декомпозиции легко точно задать результат. На практике большой эпик делится на подэпики и задачи в таблице с приоритетом, описанием, критериями работы и **definition of done**.
-
-## Зависшая сессия: смена модели и расход токенов оркестраторов
+## Смена модели и новое окно на задачу
 
 [▶ 00:24:30](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1470s)
 
-Если сессия зависла, можно переключиться на модель попроще или вернуть дефолтную. Harness Claude сам иногда переключает модели на более слабые, особенно в вопросах ИБ.
-
-Сторонние оркестраторы поверх Claude работают интересно, но заметно расходуют токены.
-
-После зависания Claude Code продолжил разбор проекта через shell: читает go.work, go.mod и каталог echo.
-
-![Claude Code inspecting go.work, go.mod and echo dir](images/36-s055.webp)
-*[▶ 00:26:21](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1581s) · Claude Code inspecting go.work, go.mod and echo dir*
-
-## Контекст растёт с каждым шагом, поэтому окно закрывают по задаче
-
-[▶ 00:26:03](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1563s)
-
-Чем дольше работаешь в одном контексте, тем больше он становится и тем больше держат в уме человек и модель.
-
-Большое окно дороже по токенам, поэтому задачу доводят до результата и открывают новый контекст.
-
-Откат к предыдущему окну нужен, когда меняется архитектура: тогда перегенерируют схемы и data flow.
-
-В демо агент сам читает 6099 строк кода и спрашивает, с какого объёма начать покрытие тестами.
-
-```go
-	worldMu.Lock()
-	defer worldMu.Unlock()
-	f()
-}
-
-// Handler возвращает готовый обработчик со всеми ручками
-func Handler() http.Handler {
-	return withLock(mux)
-}
-
-func main() {
-	demoFlag := flag.Bool("demo", false, "run demo scenario and exit")
-```
-
-![Claude Code surveying codebase before writing tests](images/37-s056.webp)
-*[▶ 00:26:46](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1606s) · Claude Code surveying codebase before writing tests*
-
-![Claude asks which scope to test first](images/38-s057.webp)
-*[▶ 00:27:08](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1628s) · Claude asks which scope to test first*
-
-```go
-	worldMu.Lock()
-	defer worldMu.Unlock()
-	f()
-}
-
-// Handler возвращает готовый обработчик со всеми ручками
-func Handler() http.Handler {
-	return withLock(mux)
-}
-
-func main() {
-	demoFlag := flag.Bool("demo", false, "run demo scenario and exit")
-```
-
-![Scope question pending in Claude chat](images/39-s058.webp)
-*[▶ 00:27:47](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1667s) · Scope question pending in Claude chat*
+**В:** Что делать, если Claude завис?
 
 ```go
 main.go:237: mux.HandleFunc("/territory/resolve", handleSiegeResolve)
@@ -589,159 +273,117 @@ main.go:254: mux.HandleFunc("/admin/config", handleConfig)
 main.go:255: mux.HandleFunc("/search", handleSearch)
 ```
 
-![Claude reads HTTP route registrations in main.go](images/40-s059.webp)
-*[▶ 00:28:11](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1691s) · Claude reads HTTP route registrations in main.go*
+*[▶ 00:28:11](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1691s) · Route registrations in main.go (grep output)*
 
-## Контекст между чатами: MD-файл и кодовая база
+**О:** Переключить модель на меньшую или дефолтную. Харнесс Claude сам может переключаться на более слабые модели, особенно в вопросах ИБ. Сторонние оркестраторы работают интересно, но жгут токены.
+
+![Three queued test prompts in agent panel](images/11-s053.webp)
+*[▶ 00:25:16](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1516s) · Three queued test prompts in agent panel*
+
+**В:** Что такое раздувание контекстного окна?
+
+**О:** Чем дольше сессия, тем больше нужно держать в уме и модели, и человеку. Точную связь стоимости токенов с размером окна не назвали. Практика: довести задачу до микрокоммита и открыть новое окно.
+
+**В:** Когда возвращаться к старым окнам?
+
+**О:** Когда меняется архитектура: откатиться и перегенерировать схемы или data flow отчёт.
+
+Для задачи покрыть тестами все 10 подсистем агент сначала вывел структуру Go-workspace:
+
+```shell
+file src/coderpad && cat go.work && echo "---go.mod---" && cat src/go.mod && echo "---echo---" && ls -la src/echo
+src/coderpad: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, Go BuildID=…, with debug_info, not stripped
+go 1.26
+
+use ./src
+---go.mod---
+module coderpad
+
+go 1.26
+
+require (
+    github.com/davecgh/go-spew v1.1.1 // indirect
+    github.com/pmezard/go-difflib v1.0.0 // indirect
+    github.com/stretchr/testify v1.11.1 // indirect
+    gopkg.in/yaml.v3 v3.0.1 // indirect
+)
+---echo---
+total 0
+drwxrwxr-x@ 2 ishimin staff 64 Sep 24 09:58 .
+drwxr-xr-x@ 16 ishimin staff 512 Sep 24 15:49 ..
+```
+
+*[▶ 00:26:21](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1581s) · Agent runs shell listing of go.work and echo*
+
+Затем он прочитал код: 6099 строк в 10 файлах, тестов нет, логика в HTTP-хендлерах. Поэтому он предложил тестировать через httptest.
+
+![Claude Code codebase scan and test-coverage plan](images/12-s056.webp)
+*[▶ 00:26:46](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1606s) · Claude Code codebase scan and test-coverage plan*
+
+Ответ заканчивался вопросом о приоритете: только main.go (ядро, 3660 строк), все 10 подсистем или выбор файлов вручную.
+
+![Claude Code codebase scan before scope question](images/13-s058.webp)
+*[▶ 00:27:47](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1667s) · Claude Code codebase scan before scope question*
+
+Агент ждал выбора в интерфейсе: три варианта объёма и поле для своего ответа.
+
+![Claude Code asks which scope to test first](images/14-s057.webp)
+*[▶ 00:27:08](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1628s) · Claude Code asks which scope to test first*
+
+## Контекст между чатами и кодовая база как источник правды
 
 [▶ 00:28:08](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1688s)
 
-Новое окно на маленькую задачу экономит токены и работает чище. Для большой задачи, которая продолжается в другом чате, контекст передают сжатым MD-документом.
+**В:** Как передавать контекст между чатами?
 
-Кодовая база тоже служит контекстом: старое окно можно актуализировать промптом, который обновит README, отчёты или диаграммы по текущему коду.
+**О:** Иван: для больших задач сжатой MD-документацией. Кодовая база тоже служит контекстом.
 
-![Handler reference table in markdown doc](images/41-s061.webp)
-*[▶ 00:29:30](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1770s) · Handler reference table in markdown doc*
+![00-overview.md: what the code actually does](images/15-s067.webp)
+*[▶ 00:32:15](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1935s) · 00-overview.md: what the code actually does*
 
-Фрагмент кода выделяют и просят исправить прямо в промпте.
+**В:** Что делать со старым окном после изменений в коде?
+
+**О:** Промт актуализирует устаревший контекст и обновляет README или диаграммы.
+
+**В:** Можно ли добавить в промт выделенный код?
+
+**О:** Да, выделенный фрагмент можно править прямо в промте.
 
 ```go
-	ResQty   int
-	Needs     map[string]int
-	MinRank   string
-	Station   string
-	Minutes   int
-	FailPct   float64
-	DutyPct   float64
-	Unlocked  bool
+    ResQty int
+    Needs map[string]int
+    MinRank string
+    Station string
+    Minutes int
+    FailPct float64
+    DutyPct float64
+    Unlocked bool
 }
 
 type CraftOrder struct {
-	ID       int
-	Recipe   string
-	GuildID  int
-	PlayerID int
-	Started  time.Time
-	Done     time.Time
-	Status   string
-	Duty     float64
-	Value    float64
-	Attempts int
-	Note     string
+    ID int
+    Recipe string
+    GuildID int
+    PlayerID int
+    Started time.Time
+    Done time.Time
+    Status string
+    Duty float64
+    Value float64
+    Attempts int
+    Note string
 }
 
 var recipes = map[string]*Recipe{}
 var craftOrders = map[int]*CraftOrder{}
 var guildStock = map[int]map[string]int{}
-
-		Active: true,
-		Founded: time.Now().AddDate(-1, 0, 0),
-		Volume: map[string]float64{},
-		Meta: map[string]string{},
-	}
-	for _, m := range mutate {
-		m(g)
-	}
-	guilds[g.ID] = g
-	return g
-}
-
-// newPlayer inserts a player directly into the…
-func newPlayer(handle string, mutate ...func(*P…
-	playerSeq++
-	p := &Player{
-		ID: playerSeq,
-		Handle: handle,
-		Rank: "novice",
-		Joined: time.Now().AddDate(-1, 0, 0),
-		LastOn: time.Now().AddDate(-1, 0, 0),
-	}
-	for _, m := range mutate {
-		m(p)
-	}
-	players[p.ID] = p
-	return p
-}
 ```
 
-*[▶ 00:30:27](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1827s) · crafting.go CraftOrder struct and edit prompt*
+*[▶ 00:30:27](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1827s) · crafting.go CraftOrder struct in editor*
 
-Агент сам читает нужные функции в коде.
+**В:** Как работать с большой кодовой базой?
 
-```go
-	ResQty   int
-	Needs     map[string]int
-	MinRank   string
-	Station   string
-	Minutes   int
-	FailPct   float64
-	DutyPct   float64
-	Unlocked  bool
-}
-
-type CraftOrder struct {
-	ID       int
-	Recipe   string
-	GuildID  int
-	PlayerID int
-	Started  time.Time
-	Done     time.Time
-	Status   string
-	Duty     float64
-	Value    float64
-	Attempts int
-	Note     string
-}
-
-var recipes = map[string]*Recipe{}
-var craftOrders = map[int]*CraftOrder{}
-var guildStock = map[int]map[string]int{}
-
-		t.Helper()
-		var m = map[string]interface{}
-		require.NoError(t, json.Unmarshal(rec.Body…
-		return m
-}
-
-// jsonSlice decodes a JSON array response into…
-func jsonSlice(t *testing.T, rec *httptest.Resp…
-		t.Helper()
-		var s []interface{}
-		require.NoError(t, json.Unmarshal(rec.Body…
-		return s
-}
-
-// newCharter registers a charter with console…
-// …
-// …
-func newCharter(code string, mutate ...func(*Cha…
-	c := &Charter{
-		Code: code,
-		Name: code,
-		Pct: 10,
-		Flash: 0,
-		Min: 0,
-		Max: 0,
-		Brackets: [][3]float64{{0, 1e15, 10}},
-		Fx: map[string]float64{},
-	}
-	for _, m := range mutate {
-		m(c)
-	}
-	charters[code] = c
-	return c
-}
-```
-
-*[▶ 00:31:01](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1861s) · crafting.go with charter test helpers*
-
-## Граф кодовых зависимостей вместо загрузки всего кода в контекст
-
-[▶ 00:30:40](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1840s)
-
-Большую кодовую базу можно подключить через **RAG** или **граф кодовых зависимостей**, по которому нейросеть ищет нужное место. По данным спикера, такой подход экономит до 30% токенов.
-
-Кандидат с таким не сталкивался и недооценил объём кода, а рефакторинг шёл долго.
+**О:** Иван не сталкивался с такими инструментами и недооценил объём кода. Интервьюер советует графы зависимостей и RAG: по его словам, они экономят до 30% токенов.
 
 ```go
 package main
@@ -758,9 +400,9 @@ import (
 	"time"
 )
 
-// войны гильдий и сезонные лиги …
-// … объявление войны, сбор результатов боёв …
-// … в конце сезона награды начисляются …
+// Войны гильдий и сезонные лиги: …
+// …
+// …
 
 type War struct {
 	ID       int
@@ -770,183 +412,66 @@ type War struct {
 	Ends     time.Time
 	Status   string
 	ScoreA   int
-	ScoreB   …
-
-
-Charter:  charter,
-Currency: "GOLD",
-Active:   true,
-Founded:  time.Now().AddDate(-1, 0, 0),
-Volume:   map[string]float64{},
-Meta:     map[string]string{},
-}
-for _, m := range mutate {
-	m(g)
-}
-guilds[g.ID] = g
-return g
-}
-
-// newPlayer creates a player element; …
-func newPlayer(handle string, mutate …
-	playerSeq++
-	p := &Player{
-		ID:      playerSeq,
-		Handle:  handle,
-		Rank:    "novice",
-		Joined:  time.Now().AddDate(-1, 0, 0),
-		LastRun: time.Now().AddDate(-1, 0, 0),
-	}
-	for _, m := range mutate {
-		m(p)
-	}
-	players[p.ID] = p
-	return p
-}
+	Score… int
 ```
 
-*[▶ 00:31:30](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1890s) · Go IDE with Claude agent session on war.go*
+*[▶ 00:31:30](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1890s) · src/war.go: imports and War struct*
 
-Агент опирался на обзор, описывающий фактическое поведение кода, а не README.
+Тем временем Claude начал писать тесты с хелперов.
 
-![IDE: Arcadia overview doc and Claude agent writing tests](images/42-s067.webp)
-*[▶ 00:32:15](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1935s) · IDE: Arcadia overview doc and Claude agent writing tests*
+![helpers_test.go: route registration and resetWorld](images/16-s068.webp)
+*[▶ 00:32:20](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1940s) · helpers_test.go: route registration and resetWorld*
 
-Тесты он начал с хелперов, создавая контексты.
-
-![Claude agent writing Go test helpers in IDE](images/43-s068.webp)
-*[▶ 00:32:20](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1940s) · Claude agent writing Go test helpers in IDE*
-
-## Ревью тестов: фиксируем то, что код делает сейчас
+## Ревью тестов от нейросети и MCP
 
 [▶ 00:32:20](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1940s)
 
-Хелперы сущностей полезны во всех тестах.
+**В:** Как Иван оценивает тесты, которые сгенерировал Claude?
+
+**О:** Смотрит на структуру: мелкие локализованные тесты и небольшие диффы проверять проще. Сначала важно покрыть существующее поведение.
+
+Тесты на `/health` и налоговые скобки.
 
 ```go
-    "time"
-    "github.com/stretchr/testify/assert"
-    "github.com/stretchr/testify/require"
+	"time"
+
+…
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestHandleHealthAndStats(t *testing.T) {
-    resetWorld()
-    newGuild("EMBER", "")
-    rec := doReq(t, "GET", "/health", "")
-    require.Equal(t, 200, rec.Code)
-    m := jsonMap(t, rec)
-    assert.Equal(t, "ok", m["status"])
-    assert.EqualValues(t, 1, m["guilds"])
+	resetWorld()
+	newGuild("EMBER", "")
+	rec := doReq(t, "GET", "/health", "")
+	require.Equal(t, 200, rec.Code)
+	m := jsonMap(t, rec)
+	assert.Equal(t, "ok", m["status"])
+	assert.EqualValues(t, 1, m["guilds"])
 
-    rec = doReq(t, "GET", "/stats", "")
-    m = jsonMap(t, rec)
-    assert.EqualValues(t, 1, m["guilds"])
-    assert.EqualValues(t, 0, m["runs"])
+	rec = doReq(t, "GET", "/stats", "")
+	m = jsonMap(t, rec)
+	assert.EqualValues(t, 1, m["guilds"])
+	assert.EqualValues(t, 0, m["runs"])
 }
 
 func TestHandleRun_TaxBracketByVolume(t *testing.T) {
-    resetWorld()
-    newCharter("BRK", func(c *Charter) {
-        c.Pct = 5
-        c.Brackets = [][3]float64{{0, 1000, 5}, {1000, 1e15, 8}}
-    })
-
-rec := doReq(t, "POST", "/run", `{"guild":"…
-
-func TestHandleReport(t *testing.T) {
-    resetWorld()
-    newCharter("REP", func(c *Charter) { c.Pct…
-    newGuild("EMBER", "REP")
-    rec := doReq(t, "POST", "/run", `{"guild":"…
-    require.Equal(t, 200, rec.Code, rec.Body.St…
-    rec := doReq(t, "GET", "/report?tag=EMBER", "")
-    assert.Contains(t, rec.Body.String(), "OT…
-    rec := doReq(t, "GET", "/report?tag=MISSING", "")
-    assert.Equal(t, 404, rec.Code)
-}
-
-$ go vet ./... 2>&1 | head -100
-…
+	resetWorld()
+	newCharter("BRK", func(c *Charter) {
+		c.Pct = 5
+		c.Brackets = [][3]float64{{0, 1000, 5}, {1000, 1e15, 8}}
+	})
 ```
 
-*[▶ 00:33:12](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1992s) · Go handler tests open in IDE editor*
+*[▶ 00:33:12](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1992s) · main_test.go: health, stats and tax tests*
 
-Тесты проверяют налог и фокус гильдии, но ожидаемое поведение неизвестно: README прочитан не полностью, и тесты фиксируют то, что код делает фактически.
+Далее идут тесты на фокус гильдии и min/max.
 
 ```go
 	m := jsonMap(t, rec)
-	// base tax 100, surcharge *(1+5/10)…1.5 … 150
+	// base tax 100, surcharge *(1+5/10)=1.5 … 150
 	assert.InDelta(t, 150, m["tax"], 0.001)
 }
-
-func TestHandleRun_FocusAdjustments(t *testing.T) {
-	resetWorld()
-	newCharter("FOC", func(c *Charter) { c.Pct = 10 })
-
-	newGuild("SHADE", "FOC", func(g *Guild) { g.Focus = "blackmarket" })
-	rec := doReq(t, "POST", "/run", `[{"guild":"SHADE","loot":"1000"}]`)
-	m = jsonMap(t, rec)
-	assert.InDelta(t, 200, m["tax"], 0.001) // doubled
-
-	newGuild("EMBER", "FOC", func(g *Guild) { g.Focus = "tavern" })
-	rec = doReq(t, "POST", "/run", `[{"guild":"EMBER","loot":"1000"}]`)
-	m = jsonMap(t, rec)
-	assert.InDelta(t, 90, m["tax"], 0.001) // 10% discount
-}
-
-func TestHandleRun_MinMaxClamp(t *testing.T) {
-	resetWorld()
-	newCharter("CLAMP", func(c *Charter) {
-		c.Pct = 1
-		c.Min = 500
-		c.Max = 50
-	…
-```
-
-*[▶ 00:33:58](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2038s) · Go handler tests in main_test.go*
-
-Упавший тест `TestHandleRun_TaxBracketByVolume` агент разбирает сам.
-
-![IDE with Go tests and agent test run output](images/44-s071.webp)
-*[▶ 00:34:26](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2066s) · IDE with Go tests and agent test run output*
-
-Правку в `main_test.go` подтверждают вручную.
-
-![Agent asks to confirm an edit to main_test.go](images/45-s072.webp)
-*[▶ 00:34:54](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2094s) · Agent asks to confirm an edit to main_test.go*
-
-Escrow-сабтест расходится на 30000, и тесты показывают это расхождение.
-
-```text
-=== RUN   TestHandleRun_EscrowThresholds
-=== RUN   TestHandleRun_EscrowThresholds/large_loot_always_escrows
-=== RUN   TestHandleRun_EscrowThresholds/young_guild_escrows_above_50000
-=== RUN   TestHandleRun_EscrowThresholds/infamous_guild_escrows_above_30000
-=== RUN   TestHandleRun_EscrowThresholds/no_escrow_meta_overrides_all_thresholds
-    main_test.go:141: resp=map[crystals:0 id:4 loot:200000 rank:… 0 status:ok tax:30000 treasury:170000]
-    main_test.go:143:
-        Error Trace:    /Users/ishimin/dev/arcadia/src/main_test.go:143
-        Error:          Max difference between 200000 and 179000 allowed is 0.001, but difference was 30000
-        Test:           TestHandleRun_EscrowThresholds/no_escrow_meta_overrides_all_thresholds
---- FAIL: TestHandleRun_EscrowThresholds (0.00s)
-    --- PASS: TestHandleRun_EscrowThresholds/large_loot_always_escrows (0.00s)
-    --- PASS: TestHandleRun_EscrowThresholds/young_guild_escrows_above_50000 (0.00s)
-    --- PASS: TestHandleRun_EscrowThresholds/infamous_guild_escrows_above_30000 (0.00s)
-    --- FAIL: TestHandleRun_EscrowThresholds/no_escrow_meta_overrides_all_thresholds (0.00s)
-FAIL
-FAIL	coderpad	0.218s
-FAIL
-```
-
-*[▶ 00:35:11](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2111s) · Escrow threshold test run with failing subtest*
-
-Правило: баги не чиним, пишем только тесты.
-
-```go
-		m := jsonMap(t, rec)
-		// base tax 100, surcharge *(1+5/10)=1.5 -> 150
-		assert.InDelta(t, 150, m["tax"], 0.001)
-	}
 
 func TestHandleRun_FocusAdjustments(t *testing.T) {
 	resetWorld()
@@ -970,98 +495,115 @@ func TestHandleRun_MinMaxClamp(t *testing.T) {
 		c.Min = 500
 		c.Max = 50
 	})
+```
 
-// helpers_test.go diff pane (partly illegible comments)
+*[▶ 00:33:58](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2038s) · main_test.go: focus adjustments and clamp tests*
+
+Агент при этом правит хелпер `newCharter`, хотя промпт запрещал чинить баги.
+
+```go
 func newCharter(code string, mutate ...func(*Charter)) *Charter {
 	c := &Charter{
-		Code:     code,
-		Name:     code,
-		Pct:      10,
-		Flat:     0,
-		Min:      0,
-		Max:      0,
+		Code:  code,
+		Name:  code,
+		Pct:   10,
+		Flat:  0,
+		Min:   0,
+		Max:   0,
 		Brackets: [][3]float64{{0, 1e15, 10}},
-		Fx:       map[string]float64{},
+		Fx:    map[string]float64{},
+	}
+		Code:  code,
+		Name:  code,
+		Pct:   10,
+		Flat:  0,
+		Min:   0,
+		Max:   0,
+		Fx:    map[string]float64{},
 	}
 ```
 
 *[▶ 00:35:33](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2133s) · Agent edits helpers_test.go newCharter helper*
 
-## Табличные тесты: удобны для спецификации, но не для любого проекта
+**В:** Что не нравится интервьюеру в тестах?
 
-[▶ 00:35:21](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2121s)
-
-Спикер предпочитает табличные тесты, потому что по ним легче писать спецификацию и быстро дописывать кейсы. Агент же написал нетабличные тесты, и спикер сказал, что исправил бы это.
+**О:** Они нетабличные. Он предпочитает табличные тесты для spec-driven development, Иван согласен.
 
 ```go
-	cases := []struct {
-		name   string
-		method string
-		body   string
-		code   int
-	}{
-		{"wrong method", "GET", "", 405},
-		{"bad json", "POST", "not json", 400},
-		{"missing guild", "POST", `{"loot":"100"}`, 400},
-		{"missing loot", "POST", `{"guild":"EMBER"}`, 400},
-		{"unknown guild", "POST", `{"guild":"NOPE","loot":"100"}`, 404},
-		{"bad loot format", "POST", `{"guild":"EMBER","loot":"abc"}`, 400},
-		{"loot too small", "POST", `{"guild":"EMBER","loot":"0.1"}`, 400},
-		{"loot limit exceeded", "POST", `{"guild":"EMBER","loot":"2000000"}`, 402},
-		{"inactive guild", "POST", `{"guild":"DEAD","loot":"100"}`, 402},
-		{"infamy too high", "POST", `{"guild":"INFAMOUS","loot":"100"}`, 402},
-		{"banned player", "POST", `{"guild":"EMBER","handle":"Cheater","loot":"100"}`, …},
-	}
-	for _, c := range cases {
-		t.Run(c.name, func(t *testing.T) {
-			rec := doReq(t, c.method, "/run", c.body)
-			assert.Equal(t, c.code, rec.Code, rec.Body.String())
-		})
-	}
+cases := []struct {
+    name   string
+    method string
+    body   string
+    code   int
+}{
+    {"wrong method", "GET", "", 405},
+    {"bad json", "POST", "not json", 400},
+    {"missing guild", "POST", `{"loot":"100"}`, 400},
+    {"missing loot", "POST", `{"guild":"EMBER"}`, 400},
+    {"unknown guild", "POST", `{"guild":"NOPE","loot":"100"}`, 404},
+    {"bad loot format", "POST", `{"guild":"EMBER","loot":"abc"}`, 400},
+    {"loot too small", "POST", `{"guild":"EMBER","loot":"0.1"}`, 400},
+    {"loot limit exceeded", "POST", `{"guild":"EMBER","loot":"2000000"}`, 402},
+    {"inactive guild", "POST", `{"guild":"DEAD","loot":"100"}`, 402},
+    {"infamy too high", "POST", `{"guild":"INFAMOUS","loot":"100"}`, 402},
+    {"banned player", "POST", `{"guild":"EMBER","handle":"Cheater","loot":"100"}…
+}
+for _, c := range cases {
+    t.Run(c.name, func(t *testing.T) {
+        rec := doReq(t, c.method, "/run", c.body)
+        assert.Equal(t, c.code, rec.Code, rec.Body.String())
+    })
 }
 ```
 
-*[▶ 00:36:19](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2179s) · Table-driven validation test cases in main_test.go*
+*[▶ 00:36:26](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2186s) · Table-driven validation cases in main_test.go*
 
-Однако он сомневается, что табличный подход подходит этому проекту: по его словам, проект, возможно, слишком мал, и он неверно оценил его размер.
+**В:** Что показал прогон тестов?
 
-## MCP как tool calling и проверка «тесты зелёные» через -race
+**О:** Claude заявил, что все 27 тестов `main.go` проходят, включая `-race`.
 
-[▶ 00:36:13](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2173s)
+```bash
+go test ./... -v 2>&1 | grep -E "^(--- FAIL|FAIL|ok)"
+ok  	coderpad	0.209s
+go test ./... -race 2>&1 | tail -20
+```
 
-MCP — коннекторы поверх tool calling: сервер описывает модели функции, например над PostgreSQL, Prometheus или Kibana. Автор использует его для поиска ошибок в логах Kibana.
+*[▶ 00:37:07](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2227s) · Agent runs Go tests, then race mode*
 
-В демо агент заявил «все тесты проходят», но `-race` нашёл гонку.
-
-![Race detector reports failure in TestDoPayout_Postponed](images/46-s078.webp)
-*[▶ 00:37:26](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2246s) · Race detector reports failure in TestDoPayout_Postponed*
-
-Трасса ведёт к горутине handleRun.
+Race-детектор затем нашёл гонку в `TestDoPayout_Postponed`.
 
 ```text
-Goroutine 46 (running) created at:
-  coderpad.handleRun()
-      /Users/ishimin/dev/arcadia/src/main.go:43 +0x3c30
+/Users/ishimin/dev/arcadia/src/main.go:643 +0x3c38
   net/http.HandlerFunc.ServeHTTP()
-      /Users/ishimin/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.26.0.darwin-arm64/src/net/http/server.go:2286 +0x48
   net/http.(*ServeMux).ServeHTTP()
-      /Users/ishimin/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.26.0.darwin-arm64/src/net/http/server.go:2828 +0x1a8
   coderpad.doReq()
-      /Users/ishimin/dev/arcadia/src/helpers_test.go:162 +0x308
   coderpad.TestHandleRelease()
-      /Users/ishimin/dev/arcadia/src/main_test.go:356 +0x120
   testing.tRunner()
-      /Users/ishimin/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.26.0.darwin-arm64/src/testing/testing.go:2036 +0x164
   testing.(*T).Run.gowrap1()
-      /Users/ishimin/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.26.0.darwin-arm64/src/testing/testing.go:2381 +0x34
 ==================
 --- FAIL: TestDoPayout_Postponed (0.00s)
     testing.go:1712: race detected during execution of test
+2026/09/24 19:52:43 skip bad line: bad line with too few fields
+FAIL
+FAIL	coderpad	0.237s
+FAIL
 ```
 
-*[▶ 00:37:54](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2274s) · Race report stack traces continue*
+*[▶ 00:37:26](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2246s) · Race detector reports data race in test*
 
-Кейс DOMINION проверяет обход лимита.
+**В:** Знает ли Иван, что такое MCP?
+
+**О:** Только смутно, как гардрейлы для нейросети. Интервьюер объясняет: MCP — протокол поверх tool calling, описание функций, которые модель может вызвать. MCP-сервер над PostgreSQL, Prometheus или Kibana даёт модели данные для разбора инцидентов.
+
+## Read-only доступ для AI и выбор стратегии рефакторинга
+
+[▶ 00:38:57](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2337s)
+
+**Q:** Какой доступ давать AI к инфраструктуре?
+
+**О:** Обычно только read-only: при записи нейросеть может натворить дел.
+
+Агент сам писал тесты и правил свои ошибки, а кандидат запретил трогать существующий код.
 
 ```go
 		{"wrong method", "GET", "", 405},
@@ -1074,7 +616,7 @@ Goroutine 46 (running) created at:
 		{"loot limit exceeded", "POST", `{"guild":"EMBER","loot":"2000000"}`, 402},
 		{"inactive guild", "POST", `{"guild":"DEAD","loot":"100"}`, 402},
 		{"infamy too high", "POST", `{"guild":"INFAMOUS","loot":"100"}`, 402},
-		{"banned player", "POST", `{"guild":"EMBER","handle":"Cheater","loot":"100"}`, 403},
+		{"banned player", "POST", `{"guild":"EMBER","handle":"Cheater","loot":"100"}`, 402},
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
@@ -1093,301 +635,80 @@ func TestHandleRollback_Basic(t *testing.T) {
 	resetWorld()
 ```
 
-*[▶ 00:38:10](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2290s) · Test table and new DOMINION bypass test in IDE*
+*[▶ 00:40:14](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2414s) · Race detector failure output in terminal pane*
 
-Таблица кейсов ошибок.
+После правки helpers_test.go прогон с -race проходит.
 
-```go
-        "wrong method", "GET", "", 405},
-        {"bad json", "POST", "not json", 400},
-        {"missing guild", "POST", "{"loot":"100"}", 400},
-        {"missing loot", "POST", `{"guild":"EMBER"}`, 400},
-        {"unknown guild", "POST", `{"guild":"NOPE","loot":"100"}`, 404},
-        {"bad loot format", "POST", `{"guild":"EMBER","loot":"abc"}`, 400},
-        {"loot too small", "POST", `{"guild":"EMBER","loot":"0.1"}`, 400},
-        {"loot limit exceeded", "POST", `{"guild":"EMBER","loot":"2000000"}`, 402},
-        {"inactive guild", "POST", `{"guild":"DEAD","loot":"100"}`, 402},
-        {"infamy too high", "POST", `{"guild":"INFAMOUS","loot":"100"}`, 402},
-        {"banned player", "POST", `{"guild":"EMBER","handle":"Cheater","loot":"100"…
-    }
-    for _, c := range cases {
-        t.Run(c.name, func(t *testing.T) {
-            rec := doReq(t, c.method, "/run", c.body)
-            assert.Equal(t, c.code, rec.Code, rec.Body.String())
-        })
-    }
+![Race-enabled test run passes after fix](images/17-s085.webp)
+*[▶ 00:40:47](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2447s) · Race-enabled test run passes after fix*
 
-    t.Run("DOMINION charter bypasses loot cap", func(t *testing.T) {
-        rec := doReq(t, "POST", "/run", `{"guild":"DOM","loot":"2000000"}`)
-        assert.Equal(t, 200, rec.Code, rec.Body.String())
-    })
-}
+**Q:** Идти по плану расхождений из README или реструктурировать код?
 
-func TestHandleRollback_Basic(t *testing.T) {
- resetWorld()
+**О:** Выбрали реструктуризацию: без дробления сущностей трудно оценить работу AI.
+
+```markdown
+| ❗ Неоднозначно | README допускает разные прочтения, нужно решение владельца продукта |
+
+## Файлы
+
+Обзор фактических поведения и диаграммы потоков данных: [00-overview.md](00-overview.md).
+
+| Файл | Тема | 🔴 | 🟠 | 🟡 | ⚪ | … |
+…
+| [01-tax.md](01-tax.md) | Налог, комиссия аукциона, пошлина крафта | – | 5 | 1 | 3 |
+| [02-raids.md](02-raids.md) | Рейды, эскроу, слава, ранги, события, дедупликация, откаты, импорт | 2 | 6 | 5 | 7 |
+| [03-payouts.md](03-payouts.md) | Суточные выплаты | – | 3 | 1 | – |
+| [04-market.md](04-market.md) | Аукцион | 1 | 2 | 2 | 1 |
+| [05-crafting.md](05-crafting.md) | Ремесло | – | 2 | – | 1 |
+| [06-war.md](06-war.md) | Войны и лига | – | 2 | 2 | 1 |
+| [07-territory.md](07-territory.md) | Территории | 1 | 2 | – | 2 |
+| [08-quests-factions.md](08-quests-factions.md) | Контракты и репутация фракций | – | 4 | 1 | 2 |
+| [09-bank.md](09-bank.md) | Займы | – | 1 | 2 | 1 |
+| [10-volume-audit-admin.md](10-volume-audit-admin.md) | Объём месяца, сверка /audit, пересчёты, фоновые задачи, запуск | 1 | 4 | 1 | 1 |
+
+## Главное
 ```
 
-*[▶ 00:38:41](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2321s) · IDE test table with DOMINION loot-cap case*
+*[▶ 00:41:04](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2464s) · IDE: README discrepancy table in raw markdown*
 
-Агент нашёл гонку в handleRun, правки предложил только в тестах.
+По отчёту AI, тесты main.go проходят, остальные девять подсистем он пишет параллельно.
 
-![Agent flags latent data race in handleRun](images/47-s082.webp)
-*[▶ 00:38:48](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2328s) · Agent flags latent data race in handleRun*
+```markdown
+## Файлы
 
-Правка: пауза в resetWorld и очистка карт.
+Обзор фактических поведения и диаграммы потоков данных: [00-overview.md](00-overview.md).
 
-```go
-        "wrong method", "GET", "", 405},
-        {"bad json", "POST", "not json", 400},
-        {"missing guild", "POST", "{"loot":"100"}", 400},
-        {"missing loot", "POST", `{"guild":"EMBER"}`, 400},
-        {"unknown guild", "POST", `{"guild":"NOPE","loot":"100"}`, 404},
-        {"bad loot format", "POST", `{"guild":"EMBER","loot":"abc"}`, 400},
-        {"loot too small", "POST", `{"guild":"EMBER","loot":"0.1"}`, 400},
-        {"loot limit exceeded", "POST", `{"guild":"EMBER","loot":"2000000"}`, 402},
-        {"inactive guild", "POST", `{"guild":"DEAD","loot":"100"}`, 402},
-        {"infamy too high", "POST", `{"guild":"INFAMOUS","loot":"100"}`, 402},
-        {"banned player", "POST", `{"guild":"EMBER","handle":"Cheater","loot":"100"…
-    }
-    for _, c := range cases {
-        t.Run(c.name, func(t *testing.T) {
-            rec := doReq(t, c.method, "/run", c.body)
-            assert.Equal(t, c.code, rec.Code, rec.Body.String())
-        })
-    }
+| Файл | Тема | 🔴 | 🟠 | 🟡 | ⚪ | … |
+…
+| [01-tax.md](01-tax.md) | Налог, комиссия аукциона, пошлина крафта | – | 5 | 1 | 3 |
+| [02-raids.md](02-raids.md) | Рейды, эскроу, слава, ранги, события, дедупликация, откаты, импорт | 2 | 6 | 5 | 7 |
+| [03-payouts.md](03-payouts.md) | Суточные выплаты | – | 3 | 1 | – |
+| [04-market.md](04-market.md) | Аукцион | 1 | 2 | 2 | 1 |
+| [05-crafting.md](05-crafting.md) | Ремесло | – | 2 | – | 1 |
+| [06-war.md](06-war.md) | Войны и лига | – | 2 | 2 | 1 |
+| [07-territory.md](07-territory.md) | Территории | 1 | 2 | – | 2 |
+| [08-quests-factions.md](08-quests-factions.md) | Контракты и репутация фракций | – | 4 | 1 | 2 |
+| [09-bank.md](09-bank.md) | Займы | – | 1 | 2 | 1 |
+| [10-volume-audit-admin.md](10-volume-audit-admin.md) | Объём месяца, сверка /audit, пересчёты, фоновые задачи, запуск | 1 | 4 | 1 | 1 |
 
-    t.Run("DOMINION charter bypasses loot cap", func(t *testing.T) {
-        rec := doReq(t, "POST", "/run", `{"guild":"DOM","loot":"2000000"}`)
-        assert.Equal(t, 200, rec.Code, rec.Body.String())
-    })
-}
+## Главное
 
-func TestHandleRollback_Basic(t *testing.T) {
- resetWorld()
+1. **Покупатель на аукционе ничего не платит.** Продавец получает кристаллы, гильдия
+   …
 ```
 
-*[▶ 00:39:20](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2360s) · Race detected; resetWorld settle fix diff*
+*[▶ 00:41:46](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2506s) · IDE: README table; agent reports test progress*
 
-## Read-only доступ ИИ к инфраструктуре
+В промпт ушла просьба составить план перехода к clean architecture с дроблением сущностей по SOLID.
 
-[▶ 00:38:57](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2337s)
+![Rendered README table; SOLID refactor prompt](images/18-s090.webp)
+*[▶ 00:43:24](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2604s) · Rendered README table; SOLID refactor prompt*
 
-Агенту дают только read-only доступ к инфраструктуре, потому что при записи нейросеть может наделать бед. Внедрить это в текущую инфраструктуру — ближайший шаг.
+**Q:** Чем просьба «составь план» отличается от plan mode в Claude Code?
 
-Агент писал тесты и находил баги в собственных тестах. Существующий код ему запретили править, поэтому он правит только свои тесты.
-
-Race detector всё ещё валит TestDoPayout_Postponed, и спикер переходит дальше.
-
-```go
-        "wrong method", "GET", "", 405},
-        {"bad json", "POST", "not json", 400},
-        {"missing guild", "POST", "{"loot":"100"}", 400},
-        {"missing loot", "POST", `{"guild":"EMBER"}`, 400},
-        {"unknown guild", "POST", `{"guild":"NOPE","loot":"100"}`, 404},
-        {"bad loot format", "POST", `{"guild":"EMBER","loot":"abc"}`, 400},
-        {"loot too small", "POST", `{"guild":"EMBER","loot":"0.1"}`, 400},
-        {"loot limit exceeded", "POST", `{"guild":"EMBER","loot":"2000000"}`, 402},
-        {"inactive guild", "POST", `{"guild":"DEAD","loot":"100"}`, 402},
-        {"infamy too high", "POST", `{"guild":"INFAMOUS","loot":"100"}`, 402},
-        {"banned player", "POST", `{"guild":"EMBER","handle":"Cheater","loot":"100"…
-    }
-    for _, c := range cases {
-        t.Run(c.name, func(t *testing.T) {
-            rec := doReq(t, c.method, "/run", c.body)
-            assert.Equal(t, c.code, rec.Code, rec.Body.String())
-        })
-    }
-
-    t.Run("DOMINION charter bypasses loot cap", func(t *testing.T) {
-        rec := doReq(t, "POST", "/run", `{"guild":"DOM","loot":"2000000"}`)
-        assert.Equal(t, 200, rec.Code, rec.Body.String())
-    })
-}
-
-func TestHandleRollback_Basic(t *testing.T) {
- resetWorld()
-```
-
-![Test run reports race in TestDoPayout_Postponed](images/48-s084.webp)
-*[▶ 00:40:14](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2414s) · Test run reports race in TestDoPayout_Postponed*
-
-## Реструктуризация кода раньше багфиксов
-
-[▶ 00:40:13](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2413s)
-
-Два пути: идти по таблице расхождений README, строя план под каждый баг, или дробить сущности на файлы, чтобы код было визуально проще оценивать.
-
-![README discrepancy table in IDE](images/49-s086.webp)
-*[▶ 00:41:04](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2464s) · README discrepancy table in IDE*
+**О:** Plan mode не пишет код, а обычный запрос может запустить правки. Агента остановили кнопкой стопа.
 
 ```go
-func resetWorld() {
-	time.Sleep(50 * time.Millisecond)
-	guilds = map[int]*Guild{}
-	players = map[int]*Player{}
-	runs = map[int]*Run{}
-}
-```
-
-Спикер выбирает второй путь: без него оценить качество кода нельзя, значит и работать с первым нельзя.
-
-![Rendered README table and Go handler code](images/50-s088.webp)
-*[▶ 00:42:02](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2522s) · Rendered README table and Go handler code*
-
-```go
-144:func withLock(h http.Handler) http.Handler
-145-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-146-		worldMu.Lock()
-147-		defer worldMu.Unlock()
-148-		h.ServeHTTP(w, r)
-149-	})
-150-}
-151-
-152:// locked выполняет фоновую операцию под общим замком
-153:func locked(f func()) {
-154-	worldMu.Lock()
-155-	defer worldMu.Unlock()
-156-	f()
-157-}
-158-
-159:// Handler возвращает готовый обработчик со всеми ручками
-160:func Handler() http.Handler {
-161-	return withLock(mux)
-162-}
-163-
-164:func main() {
-165-	demoFlag := flag.Bool("demo", false, "run demo scenario and exit")
-166-	portFlag := flag.String("port", "", "port override")
-167-	flag.Parse()
-168-
-```
-
-Тесты уже проходят: `go test ./... -race` завершается ok.
-
-![Tests pass after resetWorld fix](images/51-s085.webp)
-*[▶ 00:40:47](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2447s) · Tests pass after resetWorld fix*
-
-```go
-        "wrong method", "GET", "", 405},
-        {"bad json", "POST", "not json", 400},
-        {"missing guild", "POST", "{"loot":"100"}", 400},
-        {"missing loot", "POST", `{"guild":"EMBER"}`, 400},
-        {"unknown guild", "POST", `{"guild":"NOPE","loot":"100"}`, 404},
-        {"bad loot format", "POST", `{"guild":"EMBER","loot":"abc"}`, 400},
-        {"loot too small", "POST", `{"guild":"EMBER","loot":"0.1"}`, 400},
-        {"loot limit exceeded", "POST", `{"guild":"EMBER","loot":"2000000"}`, 402},
-        {"inactive guild", "POST", `{"guild":"DEAD","loot":"100"}`, 402},
-        {"infamy too high", "POST", `{"guild":"INFAMOUS","loot":"100"}`, 402},
-        {"banned player", "POST", `{"guild":"EMBER","handle":"Cheater","loot":"100"…
-    }
-    for _, c := range cases {
-        t.Run(c.name, func(t *testing.T) {
-            rec := doReq(t, c.method, "/run", c.body)
-            assert.Equal(t, c.code, rec.Code, rec.Body.String())
-        })
-    }
-
-    t.Run("DOMINION charter bypasses loot cap", func(t *testing.T) {
-        rec := doReq(t, "POST", "/run", `{"guild":"DOM","loot":"2000000"}`)
-        assert.Equal(t, 200, rec.Code, rec.Body.String())
-    })
-}
-
-func TestHandleRollback_Basic(t *testing.T) {
- resetWorld()
-```
-
-Сначала план перед реализацией: запрос на приведение кода к clean architecture с разбиением крупных сущностей.
-
-![README file table, auction rule, IDE view](images/52-s087.webp)
-*[▶ 00:41:46](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2506s) · README file table, auction rule, IDE view*
-
-![Go struct and lock code while planning refactor](images/53-s089.webp)
-*[▶ 00:42:41](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2561s) · Go struct and lock code while planning refactor*
-
-```go
-59-	Loot float64
-60-	Currency string
-61-	Gold float64
-62-	Tax float64
-153:func locked(f func()) {
-154-	worldMu.Lock()
-155-	defer worldMu.Unlock()
-156-	f()
-157-}
-158-
-159:// Handler возвращает готовый обработчик со всеми ручками
-160-func Handler() http.Handler {
-161-	return withLock(mux)
-162-}
-163-
-144:func withLock(h http.Handler) http.Handler {
-145-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-146-		worldMu.Lock()
-147-		defer worldMu.Unlock()
-148-		h.ServeHTTP(w, r)
-149-	})
-150-}
-151-
-152:// locked выполняет фоновую операцию под общим замком
-153-func locked(f func()) {
-154-	worldMu.Lock()
-155-	defer worldMu.Unlock()
-156-	f()
-157-}
-158-
-159:// Handler возвращает готовый обработчик со всеми ручками
-```
-
-## Дробление крупных сущностей по SOLID и KISS
-
-[▶ 00:42:08](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2528s)
-
-Цель рефакторинга — привести код к Clean Architecture, потому что текущие сущности слишком крупные. Спор о том, что лучше, Clean Architecture или гексагональная архитектура, периодически возникает, но автору ближе первый вариант. Чтобы сущности стали меньше и легче читались человеком, он опирается на **SOLID** и **KISS**.
-
-Крупные структуры с десятками полей и логика записи леджера в `bank.go` показывают, где сущности разрастаются:
-
-```go
-31-	Focus string
-32-	Currency string
-33-	Active bool
-34-	Founded time.Time
-35-	Treasury float64
-36-	Escrow float64
-37-	Volume map[string]float64
-38-	Meta map[string]string
-39-	Infamy int
-40-}
-41-
-42-type Player struct {
-43-	ID int
-44-	Handle string
-45-	Contact string
-46-	Rank string
-/Users/ishimin/dev/arcadia/src/bank.go:55:func writeLedger(gid int, kind string, amount float64, ref string) {
-/Users/ishimin/dev/arcadia/src/bank.go:56-	g := guilds[gid]
-/Users/ishimin/dev/arcadia/src/bank.go:57-	bal := 0.0
-/Users/ishimin/dev/arcadia/src/bank.go:58-	if g != nil {
-/Users/ishimin/dev/arcadia/src/bank.go:59-		bal = g.Treasury
-/Users/ishimin/dev/arcadia/src/bank.go:60-		ledgerSeq++
-/Users/ishimin/dev/arcadia/src/bank.go:62-		ledger = append(ledger, LedgerRec{ID: ledgerSeq, At: time.Now(), GuildID: gid, Kind: kind, Amount: amount, Balance: bal, Ref: ref})
-/Users/ishimin/dev/arcadia/src/bank.go:63-		…
-```
-
-*[▶ 00:43:24](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2604s) · Large Go structs and bank.go grep output*
-
-Задача для агента формулируется одним промптом: составить план приведения кода в соответствие с Clean Architecture и раздробить сущности по SOLID и KISS.
-
-![AI agent refactoring plan for Go code](images/54-s091.webp)
-*[▶ 00:43:34](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2614s) · AI agent refactoring plan for Go code*
-
-## Plan mode: режим без правок кода, а не слово «план»
-
-[▶ 00:43:30](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2610s)
-
-Plan mode в Claude Code не пишет код и не редактирует файлы; фраза «давай составим план» его не гарантирует. В обычном режиме агент полез в код, его остановили.
-
-```bash
 cat <<'EOF' > /tmp/fmtcheck.go
 package main
 import "fmt"
@@ -1400,203 +721,152 @@ EOF
 go run /tmp/fmtcheck.go
 ```
 
-![Agent runs grep and a Go float formatting check](images/55-s092.webp)
-*[▶ 00:44:18](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2658s) · Agent runs grep and a Go float formatting check*
+*[▶ 00:44:18](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2658s) · Claude Code session with plan-mode prompt*
 
-Перед разделением сущностей агент ищет лимиты лута и обработчик `handleRun`.
+![IDE with file overview table and Claude Code pane](images/19-s093.webp)
+*[▶ 00:44:47](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2687s) · IDE with file overview table and Claude Code pane*
 
-![Agent greps loot limits in main.go](images/56-s093.webp)
-*[▶ 00:44:47](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2687s) · Agent greps loot limits in main.go*
+## Скиллы как MD-промты и решения по рефакторингу
 
-Агент выписал фоновые задачи: выплаты раз в сутки, проценты по займам каждые 6 ч, просрочка каждые 30 минут.
+[▶ 00:45:36](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2736s)
 
-![Agent summarizes background tasks and reports](images/57-s094.webp)
-*[▶ 00:45:42](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2742s) · Agent summarizes background tasks and reports*
+**В:** Знаком ли Иван со скиллами Claude?
 
-## Раскладка пакетов Go и внешний контракт
+**О:** Поверхностно, например для экспорта PDF. Скилл — это MD-файл с промтом. Чаще всего он использует скиллы для работы с файлами и диаграммами.
 
-[▶ 00:47:03](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2823s)
+![Markdown file table beside Claude Code terminal](images/20-s096.webp)
+*[▶ 00:46:23](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2783s) · Markdown file table beside Claude Code terminal*
 
-Для раскладки пакетов Claude предлагает фича + слой: `internal/<context>/{domain,app}` и `internal/adapters/{http,memory,jobs}`. Ведущий считает, что однозначного ответа нет.
+**В:** Есть ли у него скиллы для ревью?
 
-![Agent questions: package layout and HTTP contract](images/58-s099.webp)
-*[▶ 00:47:34](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2854s) · Agent questions: package layout and HTTP contract*
+**О:** Да, кастомные инструкции в MD-файле с ограничениями и гардрейлами. Он не называл их скиллом, пока не зашёл разговор.
 
-Логика скидок фракций разбросана по файлам.
+![Claude Code terminal and file-table review](images/21-s095.webp)
+*[▶ 00:46:14](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2774s) · Claude Code terminal and file-table review*
 
-![Terminal grep for factionDiscount usages](images/59-s100.webp)
-*[▶ 00:47:50](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2870s) · Terminal grep for factionDiscount usages*
+```bash
+grep -n "factionDiscount(\)\"novice\": 0…
+…
+crafting.go:119: if x.Tag == ta
+{
+crafting.go:173: if x.H…
+crafting.go:259: if x.Tag == ta
+{
+crafting.go:276: if x.Handle ==
+handle }
+crafting.go:303: order := map[string]int{"novice": 0, "adept": 1, "veteran": 2, "legend": 3}
+admin.go:45: if ...
+GuildID == g.ID
+faction.go:123:func factionDiscount(gid int) …
+main.go:585: case "veteran":
+main.go:724: if x.Tag == tag {
+main.go:1160: if x.Handle ==
+main.go:1284: if x.Tag == ta
+…
+```
 
-Баги из ревью сохраняем: план их не чинит, трогаем только критичные.
+*[▶ 00:47:50](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2870s) · Terminal grep output over the review code*
 
-![Review plan files table in editor and terminal](images/60-s101.webp)
-*[▶ 00:48:12](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2892s) · Review plan files table in editor and terminal*
+**В:** Как команды используют скилл для форматирования?
 
-Go vet и тесты идут в фоне, пока пишется черновик плана.
+**О:** Большой MD-файл с архитектурой команды подключают к новым или старым проектам. Это не совсем линтер, а более высокоуровневый, про архитектуру.
 
-![Parallel agents run Go vet and tests](images/61-s102.webp)
-*[▶ 00:49:17](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2957s) · Parallel agents run Go vet and tests*
+**В:** Что Иван ответил агенту про баги и пакеты?
 
-Найденные баги: дубли рейдов в одну секунду, недостижимый статус debt, гонка на cfgEscrowDays.
+**О:** Баги оставил 1:1, чинить после рефакторинга. Пакеты — «фича + слой». Ментор сказал, что правильного ответа нет.
 
-![Claude Code proposes review findings and verification steps](images/62-s103.webp)
-*[▶ 00:50:24](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3024s) · Claude Code proposes review findings and verification steps*
+![Claude Code question form: bug handling options](images/22-s098.webp)
+*[▶ 00:47:05](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2825s) · Claude Code question form: bug handling options*
 
-Внешний HTTP-контракт держат байт-в-байт, потому что проект уже в проде. Скилл — это MD-файл с промптом, а линтеры на архитектуру стоят выше обычных.
+![Claude Code question form: package layout options](images/23-s099.webp)
+*[▶ 00:47:34](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2854s) · Claude Code question form: package layout options*
 
-## Линтеры подключают после того, как код приведён в порядок
+```bash
+cd /Users/ishimin/dev/arcadia/src && go vet ./... && go test ./....
+go test -race ./...
+```
+
+*[▶ 00:50:24](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3024s) · Plan verification steps and approval options*
+
+## Проверка плана перед реализацией
 
 [▶ 00:49:30](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=2970s)
 
-Линтеры и форматтеры нужны не каждому проекту, а на определённом этапе его зрелости. Порядок такой:
+**Q:** Нужны ли линтеры и форматтеры в эпоху нейросетей?
 
-1. Сначала проект пишется в режиме вайбкодинга.
-2. Промтом код приводят в относительный порядок.
-3. Подключают линтеры и устраняют найденные замечания.
-4. Дальше работают в рамках линтеров.
+**A:** Да, но не каждому проекту, а на определённой зрелости: сначала навайбкодить, затем промтом привести код в порядок и подключить линтеры.
 
-Модель соглашается с этим подходом и просит после каждого файла проверять, что найденные замечания устранены.
+**Q:** Что Иван думает о плане, который выдал Claude?
 
-## Разбор плана Claude: от общего к микроправкам
+**A:** Это вывод ИИ. Иван смотрит на него верхнеуровнево: покрытие по модулям и шаги, которые показались расплывчатыми.
 
-[▶ 00:50:25](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3025s)
+![Per-module test coverage plan](images/24-s105.webp)
+*[▶ 00:50:48](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3048s) · Per-module test coverage plan*
 
-План сохраняют в `.plans` и разбирают по пунктам.
+**Q:** Что делать с найденными особенностями?
 
-![Asking agent to save the plan to .plans](images/63-s104.webp)
-*[▶ 00:50:44](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3044s) · Asking agent to save the plan to .plans*
+**A:** Claude предлагает фиксировать их, не чиня. Иван хочет проверить каждое замечание по коду, так как часть может быть сделана намеренно.
 
-Каждая подсистема получает отдельный тестовый файл.
+![Arcadia test-coverage plan in Claude Code](images/25-s106.webp)
+*[▶ 00:51:35](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3095s) · Arcadia test-coverage plan in Claude Code*
 
-![Agent's list of planned test files](images/64-s105.webp)
-*[▶ 00:50:48](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3048s) · Agent's list of planned test files*
+**Q:** Как проверять шаги плана?
 
-Ведущий считает план без конкретики непригодным к исполнению.
+**A:** Оценить объём дифа каждого шага, например шага по faction_test, а крупные раздробить на микроправки.
 
-![Claude Code plan: test steps and findings](images/65-s106.webp)
-*[▶ 00:51:35](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3095s) · Claude Code plan: test steps and findings*
+![Step-by-step test plan, first items highlighted](images/26-s107.webp)
+*[▶ 00:51:58](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3118s) · Step-by-step test plan, first items highlighted*
 
-На подсистему: читать файл целиком, писать тест, запускать `go test ./...`, править только тест.
+![Plan steps with market_test and findings](images/27-s108.webp)
+*[▶ 00:52:11](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3131s) · Plan steps with market_test and findings*
 
-![Claude Code plan: per-subsystem test steps](images/66-s107.webp)
-*[▶ 00:51:58](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3118s) · Claude Code plan: per-subsystem test steps*
+**Q:** Что в контексте и текущем состоянии?
 
-Баги не чинят, только фиксируют: dedup `/run` склеивает рейды в одну секунду, а проверка `Net < 1000` стоит раньше `Net < 0`, поэтому статус debt недостижим.
+**A:** Общие хелперы переиспользуются, исходники не тронуты, фоновые агенты остановлены.
 
-![Claude Code plan: numbered test steps (scrolled)](images/67-s108.webp)
-*[▶ 00:52:11](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3131s) · Claude Code plan: numbered test steps (scrolled)*
+![Context, current state and plan steps](images/28-s109.webp)
+*[▶ 00:52:32](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3152s) · Context, current state and plan steps*
 
-## Оценка дифа и пошаговая реализация плана
+**Q:** Какие правила заданы?
 
-[▶ 00:52:02](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3122s)
+**A:** Код приложения не меняется, баги не чинятся, меняются только файлы *_test.go.
 
-Оцените дифф каждого шага. Крупный шаг дробите на микроправки, которые проще контролировать глазами, например по файлам.
+![Task context, rules and current state](images/29-s110.webp)
+*[▶ 00:52:47](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3167s) · Task context, rules and current state*
 
-![Claude Agent session: test-coverage findings notes](images/68-s111.webp)
-*[▶ 00:55:02](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3302s) · Claude Agent session: test-coverage findings notes*
+**Q:** Нужно ли кросс-ревью?
 
-Шаги идут по очереди: прочитать файл целиком, написать тест, запустить `go test ./...`, исправить только тест.
+**A:** Иван предлагает сначала кросс-ревью плана другой моделью. Собеседник отмечает, что модели замечают разное, и это полезно для архитектуры и планов в больших проектах.
 
-![Claude Code status: helpers, main_test, and plan](images/69-s109.webp)
-*[▶ 00:52:32](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3152s) · Claude Code status: helpers, main_test, and plan*
-
-Перед одобрением проверьте правила плана: менять можно только тестовые файлы.
-
-![Claude Code context and current state](images/70-s110.webp)
-*[▶ 00:52:47](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3167s) · Claude Code context and current state*
-
-Для быстрых задач используйте скиллы: реализация, ревью двумя агентами, которые правят друг друга, и общая сводка из двух ревью.
-
-## Кросс-ревью: модели проверяют планы друг друга
-
-[▶ 00:53:57](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3237s)
-
-**Кросс-ревью** — когда Claude проверяет Codex и наоборот. Ценность в разном обучении моделей: они замечают разные вещи. Лучше всего работает на архитектуре и планах больших проектов. Порядок такой: сначала кросс-ревью плана с просьбой перепроверять наличие проблем, и только потом сверка с кодом, потому что на большом объёме глазами читать дольше. Многие харнессы уже выносят кросс-ревью в отдельную функцию.
-
-## Shortcut: мок-интервью за 2 000 рублей и план развития
-
-[▶ 00:55:51](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3351s)
-
-Shortcut — менторская платформа. По словам спикера, у неё более 150 менторов из BigTech, стартапов и небольших компаний. Входная точка — **мок-интервью**: часовое собеседование один на один с ментором за 2 000 рублей. Ментора выбирают по компании или сфере, а секцию задаёт клиент: кодинг, LeetCode, system design, языковая секция.
-
-Деньги за мок возвращают по любой причине: достаточно сказать «просто хочу деньги вернуть». По словам спикера, из 2 000 моков возврат был 12 раз.
-
-![Mock interview with money-back guarantee](images/71-s118.webp)
-*[▶ 00:59:25](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3565s) · Mock interview with money-back guarantee*
-
-После интервью ментор готовит подробный фидбэк: сильные и слабые стороны, вилку зарплаты сейчас и после прокачки, порядок изучения тем до следующего грейда. Фидбэк генерирует система, ментор его проверяет.
-
-![Development plan after the interview](images/72-s119.webp)
-*[▶ 01:00:04](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3604s) · Development plan after the interview*
-
-Мок часто показывает разрыв между практикой и теорией: кандидат хорошо знает то, что использовал в проде, но слабее в теоретических вопросах.
-
-![Mentee testimonials after mock interview](images/73-s120.webp)
-*[▶ 01:00:37](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3637s) · Mentee testimonials after mock interview*
-
-Затем менеджер проводит фидбэк-колл и предлагает план роста. Заниматься самостоятельно или с платформой решает клиент, но спикер рекомендует с ментором: так быстрее.
-
-![Фидбек-колл и менторская программа](images/74-s121.webp)
-*[▶ 01:00:58](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3658s) · Фидбек-колл и менторская программа*
-
-Менторская программа: 1-1 уроки по каждой теме, домашки с code review, личный чат с ментором между занятиями. Помощь с наймом: консультации HR, готовое резюме, рефералки в BigTech.
-
-![Как устроена менторская программа](images/75-s122.webp)
-*[▶ 01:02:15](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3735s) · Как устроена менторская программа*
-
-Платформа обещает пять собеседований, потому что часть компаний по договору зовёт кандидатов от Shortcut. Спикер называет целями поиск работы за рубежом, смену работы, рост по грейду и подготовку к тимлиду или CTO, и советует уделять не меньше 10 часов в неделю.
-
-![Какие цели подойдёт ШОРТКАТ?](images/76-s125.webp)
-*[▶ 01:04:31](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3871s) · Какие цели подойдёт ШОРТКАТ?*
-
-## Проверяется мышление инженера, а не умение промптить
+## Что проверяет AI-секция и какие навыки нужны
 
 [▶ 01:06:07](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=3967s)
 
-Получить код одним промптом может любой, поэтому AI-секция проверяет системное мышление. Важно, можно ли допустить кандидата до прода как инженера, работающего с нейросетью, а не как «мясной проксик», который принимает результат модели без проверки.
+**В:** Что проверяет AI-секция?
 
-Кандидат должен:
+**О:** Саша (интервьюер): системное техническое мышление. Нужен инженер с нейросетью, а не «мясной проксик»: кандидат сам проверяет результат и получает детерминированный итог. Грейда как такового нет, есть набор оценок.
 
-- сам проверять результат и получать детерминированный выход;
-- находить, где модель ошиблась;
-- писать тесты и разбирать тест-кейсы, а не отдавать их нейросети.
+**В:** Как прошёл собес Ивана?
 
-По словам интервьюера, без такого подхода код от нейросети не работает: так, по его наблюдению, и выглядят многие B2B SaaS.
+**О:** Саша отметил, что Иван покрывал код тестами, проверял работу нейросети и решал, правильно ли она сделала. Такой кандидат, по его словам, подошёл бы в команду: главное — не навредить инструментами.
 
-## AI-секции на собеседованиях скоро устаканятся
+**В:** Каковы ожидания кандидата?
 
-[▶ 01:09:48](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=4188s)
+**О:** Иван (кандидат): это его первое AI-собеседование, о нём он узнал из шортката. Ожидания в целом совпали с реальностью, а разбор показал пробелы.
 
-Ведущий считает, что формат AI-секции устаканится примерно через год. Сначала кандидатов спрашивают о разном, а затем вопросы начинают повторяться. Аудиторию он попросил оценить, является ли формат скамом или будущим стандартом собеседований.
+**В:** Будет ли такой формат нормой?
 
-## Чек-лист AI-навыков: интерес, модели, недоверие к нейросети
+**О:** В эфире прозвучало мнение, что формат устаканится примерно через год: сначала вопросы будут разными, потом почти одинаковыми.
 
-[▶ 01:11:55](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=4315s)
+**В:** Какой уровень владения нейросетями считается хорошим?
 
-Готового набора навыков нет, важнее интерес и понимание:
-
-- **MCP** — уже стандарт рынка.
-- **Фронтир-модели**: знать отличия и брать дешевле модели для простых задач, а не кодить всё самой дорогой.
-- **Харнесы**: изучать их функции и проводить ревью.
-
-Главный навык — **недоверие к нейросети**: это перемножение матриц, которое иногда ошибается. Входы и выходы нужно зажимать детерминированно: линтеры, тесты, спеки, перепроверка разными нейросетями.
-
-## Мок-интервью за 2000 рублей с ментором из целевой компании
-
-[▶ 01:13:47](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=4427s)
-
-По мнению ведущего, проверка работы с AI уже встречается на многих собеседованиях или появится в ближайшие 1–1,5 года.
-
-Платное мок-собеседование стоит 2000 рублей и включает:
-- часовое собеседование с ментором из компании, куда вы хотите попасть;
-- подробный фидбэк о том, что делать дальше;
-- возврат денег, если что-то не понравится.
-
-Заявка оставляется по ссылке в описании эфира: [shortcut_py_bot](https://t.me/shortcut_py_bot?start=youtube_video_pythonsobes_131026).
+**О:** Саша (ответ на вопрос ведущего): готового набора нет, важны интерес и понимание:
+- знать MCP, который уже стал стандартом рынка;
+- понимать отличия фронтир-моделей и брать дешёвые для рутины;
+- изучать функции харнессов;
+- главный навык: недоверие нейросети, которая перемножает матрицы и может ошибаться;
+- делать результат детерминированным: линтеры, тесты, спеки, перепроверка.
 
 ## Ссылки и материалы
 
-- [Telegram-бот shortcut_py_bot — запись на платное мок-собеседование из описания](https://t.me/shortcut_py_bot?start=youtube_video_pythonsobes_131026) — <https://t.me/shortcut_py_bot?start=youtube_video_pythonsobes_131026> · описание видео
-- [go-spew — Go-библиотека для вывода структур, зависимость проекта echo](https://github.com/davecgh/go-spew) — <https://github.com/davecgh/go-spew> · на экране [▶ 00:26:21](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1581s)
-- [go-difflib — Go-библиотека для diff, зависимость проекта echo](https://github.com/pmezard/go-difflib) — <https://github.com/pmezard/go-difflib> · на экране [▶ 00:26:21](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1581s)
-- [testify — тестовый фреймворк для Go, зависимость проекта echo](https://github.com/stretchr/testify) — <https://github.com/stretchr/testify> · на экране [▶ 00:26:21](https://www.youtube.com/watch?v=7KAvNMjbIqQ&t=1581s)
+- [Бот-бот для записи на платный сервис (2000 руб.), ссылка из описания видео](https://t.me/shortcut_py_bot?start=youtube_video_pythonsobes_131026) — <https://t.me/shortcut_py_bot?start=youtube_video_pythonsobes_131026> · описание видео
