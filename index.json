@@ -72,7 +72,7 @@
     "minutes": 49
   },
   "vr3f_Nlq1Wg": {
-    "folder": "2026-10-12-beyond-springbootapplication-spring-boot",
+    "folder": "2026-10-12-beyond-springbootapplication-sozdanie-sobstvennykh-ekosistem-poverkh-spring-boot",
     "date": "2026-10-12",
     "title": "Никита Кириллов — Beyond @SpringBootApplication: создание собственных экосистем поверх Spring Boot",
     "speaker": "Joker — Конференция о будущем разработки",
@@ -80,7 +80,7 @@
     "minutes": 44
   },
   "q7BtbygIUcc": {
-    "folder": "2026-10-12-talk",
+    "folder": "2026-10-12-rabota-s-neshtatnymi-situatsiyami-v-kosmicheskoy-tekhnike",
     "date": "2026-10-12",
     "title": "Работа с нештатными ситуациями в космической технике",
     "speaker": "Joker — Конференция о будущем разработки",
@@ -88,7 +88,7 @@
     "minutes": 49
   },
   "WAsW8RuWZuY": {
-    "folder": "2026-10-12-kotlin",
+    "folder": "2026-10-12-a-vy-mozhete-skazat-chto-vse-taki-takoe",
     "date": "2026-10-12",
     "title": "Глеб Минаев — А вы можете сказать, что все-таки такое «корутина» в Kotlin?",
     "speaker": "Joker — Конференция о будущем разработки",
@@ -96,7 +96,7 @@
     "minutes": 46
   },
   "9rx6CIXzCE4": {
-    "folder": "2026-10-12-synchronized-thread-safety",
+    "folder": "2026-10-12-za-predelami-synchronized-na-rubezhe-thread-safety",
     "date": "2026-10-12",
     "title": "Михаил Поливаха — За пределами synchronized: на рубеже Thread Safety",
     "speaker": "Joker — Конференция о будущем разработки",
@@ -104,7 +104,7 @@
     "minutes": 50
   },
   "m82RaZcpcgU": {
-    "folder": "2026-10-12-transactional-outbox-postgresql",
+    "folder": "2026-10-12-a-skolko-realizatsiy-transactional-outbox-dlya-postgresql-vy",
     "date": "2026-10-12",
     "title": "Денис Цветцих — А сколько реализаций Transactional Outbox для PostgreSQL вы знаете?",
     "speaker": "Joker — Конференция о будущем разработки",
@@ -298,7 +298,7 @@
     "minutes": 40
   },
   "GblUTiS6cdE": {
-    "folder": "2026-10-12-spring-data-jdbc",
+    "folder": "2026-10-12-spring-data-jdbc-gde-my-nakhodimsya-seychas",
     "date": "2026-10-12",
     "title": "Артемий Дегтярев — Spring Data JDBC: где мы находимся сейчас",
     "speaker": "Joker — Конференция о будущем разработки",
@@ -307,7 +307,7 @@
     "minutes": 38
   },
   "i8Spd1b3AEY": {
-    "folder": "2026-10-12-micrometer-grafana",
+    "folder": "2026-10-12-monitor-eto-kak-pisat-svoi-metriki-dlya-micrometer",
     "date": "2026-10-12",
     "title": "Рустам Курамшин — Мониторь это. Как писать свои метрики для Micrometer и Grafana",
     "speaker": "Joker — Конференция о будущем разработки",
@@ -316,7 +316,7 @@
     "minutes": 48
   },
   "Jpgl3qrUVE8": {
-    "folder": "2026-10-12-java-quarkus",
+    "folder": "2026-10-12-kak-java-freymvorki-uskoryayutsya-na-primere-quarkus",
     "date": "2026-10-12",
     "title": "Андрей Кулешов — Как Java-фреймворки ускоряются (на примере Quarkus)",
     "speaker": "Joker — Конференция о будущем разработки",
@@ -325,7 +325,7 @@
     "minutes": 50
   },
   "7KAvNMjbIqQ": {
-    "folder": "interview/2026-10-14-ai-fintech",
+    "folder": "interview/2026-10-14-ai-koding-intervyu-s-razrabotchikom-iz-mezhdunarodnogo-fintech",
     "date": "2026-10-14",
     "title": "AI кодинг интервью с разработчиком из международного FinTech",
     "speaker": "ШОРТКАТ — менторская программа",
