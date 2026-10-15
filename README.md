@@ -6,6 +6,7 @@ Projects: [ai-talks](ai-talks/) · [interview](interview/) · [profG](profg/)
 
 | Date | Talk | Speaker | Length | Project |
 |---|---|---|---|---|
+| 2026-10-15 | [AI SDK 6 is SWEET](interview/2026-10-15-ai-sdk-6-is-sweet/) · [video](https://www.youtube.com/watch?v=YCrj0E_P6ls) | Matt Pocock | 9 min | [interview](interview/) |
 | 2026-10-14 | [Java Senior Interview с ментором из Uzum, ex WB 1](interview/2026-10-14-java-senior-interview-s-mentorom-iz-uzum-ex/) · [video](https://www.youtube.com/watch?v=Vivtr3grCt4) | ШОРТКАТ — менторская программа | 110 min | [interview](interview/) |
 | 2026-10-14 | [AI кодинг интервью с разработчиком из международного FinTech](interview/2026-10-14-ai-koding-intervyu-s-razrabotchikom-iz-mezhdunarodnogo-fintech/) · [video](https://www.youtube.com/watch?v=7KAvNMjbIqQ) | ШОРТКАТ — менторская программа | 80 min | [interview](interview/) |
 | 2026-10-12 | [This EU Firm Made Billions Buying Up Forgotten Tech](profg/2026-10-12-this-eu-firm-made-billions-buying-up-forgotten/) · [video](https://www.youtube.com/watch?v=ZdmnHQmG8vc) | Prof G Markets | 66 min | [profG](profg/) |
