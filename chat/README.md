@@ -1,7 +1,8 @@
 # chat
 
-1 talks · [all digests](../)
+2 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
 | 2026-10-15 | [Tips for building AI agents](2026-10-15-tips-for-building-ai-agents/) · [video](https://www.youtube.com/watch?v=LP5OCa20Zpg) | Anthropic | 18 min |
+| 2026-10-15 | [How We Build Effective Agents: Barry Zhang, Anthropic](2026-10-15-how-we-build-effective-agents-barry-zhang-anthropic/) · [video](https://www.youtube.com/watch?v=D7_ipDqhtwk) | AI Engineer | 15 min |

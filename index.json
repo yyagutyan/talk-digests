@@ -359,5 +359,14 @@
     "project": "chat",
     "url": "https://www.youtube.com/watch?v=LP5OCa20Zpg",
     "minutes": 18
+  },
+  "D7_ipDqhtwk": {
+    "folder": "chat/2026-10-15-how-we-build-effective-agents-barry-zhang-anthropic",
+    "date": "2026-10-15",
+    "title": "How We Build Effective Agents: Barry Zhang, Anthropic",
+    "speaker": "AI Engineer",
+    "project": "chat",
+    "url": "https://www.youtube.com/watch?v=D7_ipDqhtwk",
+    "minutes": 15
   }
 }
