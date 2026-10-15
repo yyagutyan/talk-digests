@@ -350,5 +350,14 @@
     "project": "interview",
     "url": "https://www.youtube.com/watch?v=YCrj0E_P6ls",
     "minutes": 9
+  },
+  "LP5OCa20Zpg": {
+    "folder": "chat/2026-10-15-tips-for-building-ai-agents",
+    "date": "2026-10-15",
+    "title": "Tips for building AI agents",
+    "speaker": "Anthropic",
+    "project": "chat",
+    "url": "https://www.youtube.com/watch?v=LP5OCa20Zpg",
+    "minutes": 18
   }
 }
