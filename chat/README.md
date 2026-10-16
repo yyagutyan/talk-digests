@@ -1,9 +1,10 @@
 # chat
 
-4 talks · [all digests](../)
+5 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
+| 2026-10-16 | [Anthropic engineers just released the best 1-hour course on building…](2026-10-16-anthropic-engineers-just-released-the-best-1-hour/) · [video](https://x.com/i/status/2110853512594948519) | Residual | 98 min |
 | 2026-10-15 | [Tips for building AI agents](2026-10-15-tips-for-building-ai-agents/) · [video](https://www.youtube.com/watch?v=LP5OCa20Zpg) | Anthropic | 18 min |
 | 2026-10-15 | [How We Build Effective Agents: Barry Zhang, Anthropic](2026-10-15-how-we-build-effective-agents-barry-zhang-anthropic/) · [video](https://www.youtube.com/watch?v=D7_ipDqhtwk) | AI Engineer | 15 min |
 | 2026-10-15 | [AI SDK v5: A Crash Course \| Matt Pocock at React Universe Conf 2025](2026-10-15-ai-sdk-v5-a-crash-course-matt-pocock/) · [video](https://www.youtube.com/watch?v=ihHLs6v7Lko) | Callstack | 23 min |

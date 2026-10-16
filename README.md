@@ -6,6 +6,7 @@ Projects: [ai-talks](ai-talks/) · [chat](chat/) · [interview](interview/) · [
 
 | Date | Talk | Speaker | Length | Project |
 |---|---|---|---|---|
+| 2026-10-16 | [Anthropic engineers just released the best 1-hour course on building…](chat/2026-10-16-anthropic-engineers-just-released-the-best-1-hour/) · [video](https://x.com/i/status/2110853512594948519) | Residual | 98 min | [chat](chat/) |
 | 2026-10-15 | [AI SDK 6 is SWEET](interview/2026-10-15-ai-sdk-6-is-sweet/) · [video](https://www.youtube.com/watch?v=YCrj0E_P6ls) | Matt Pocock | 9 min | [interview](interview/) |
 | 2026-10-15 | [Tips for building AI agents](chat/2026-10-15-tips-for-building-ai-agents/) · [video](https://www.youtube.com/watch?v=LP5OCa20Zpg) | Anthropic | 18 min | [chat](chat/) |
 | 2026-10-15 | [How We Build Effective Agents: Barry Zhang, Anthropic](chat/2026-10-15-how-we-build-effective-agents-barry-zhang-anthropic/) · [video](https://www.youtube.com/watch?v=D7_ipDqhtwk) | AI Engineer | 15 min | [chat](chat/) |
