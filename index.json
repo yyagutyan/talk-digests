@@ -467,5 +467,14 @@
     "project": "java",
     "url": "https://www.youtube.com/watch?v=v86SfHA5ISw",
     "minutes": 50
+  },
+  "8NURE3I4AJQ": {
+    "folder": "java/2026-10-19-high-performance-java-native-ai-with-cuda-and",
+    "date": "2026-10-19",
+    "title": "High Performance Java Native AI with CUDA and the Vector API by Zoran Sevarac",
+    "speaker": "Zoran Sevarac",
+    "project": "java",
+    "url": "https://www.youtube.com/watch?v=8NURE3I4AJQ",
+    "minutes": 49
   }
 }
