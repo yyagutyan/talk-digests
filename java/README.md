@@ -1,6 +1,6 @@
 # java
 
-5 talks · [all digests](../)
+6 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
@@ -9,3 +9,4 @@
 | 2026-10-19 | [Is AI killing XP practices? Or are we letting it? By Nacho Cougil](2026-10-19-is-ai-killing-xp-practices-or-are-we/) · [video](https://www.youtube.com/watch?v=wrV4f83UMWI) | Nacho Cougil | 49 min |
 | 2026-10-19 | [In the loop , not in the dark: Staying in controlling the era dark software factories By Alex Gavr](2026-10-19-in-the-loop-not-in-the-dark-staying/) · [video](https://www.youtube.com/watch?v=jhvT8hVYSvQ) | Alex Gavr | 45 min |
 | 2026-10-19 | [All you need to know about Maven 4! by Matthias Bünger](2026-10-19-all-you-need-to-know-about-maven-4/) · [video](https://www.youtube.com/watch?v=TgkY2UmWtBo) | Matthias Bünger | 47 min |
+| 2026-10-19 | [10 Billion Records vs The Regulator: An Architectural Post Mortem of an 11TB Exadata Failure](2026-10-19-10-billion-records-vs-the-regulator-an-architectural/) · [video](https://www.youtube.com/watch?v=TB45qqp-OxM) | Devoxx | 49 min |

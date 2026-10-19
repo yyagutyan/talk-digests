@@ -440,5 +440,14 @@
     "project": "java",
     "url": "https://www.youtube.com/watch?v=wrV4f83UMWI",
     "minutes": 49
+  },
+  "TB45qqp-OxM": {
+    "folder": "java/2026-10-19-10-billion-records-vs-the-regulator-an-architectural",
+    "date": "2026-10-19",
+    "title": "10 Billion Records vs The Regulator: An Architectural Post Mortem of an 11TB Exadata Failure",
+    "speaker": "Devoxx",
+    "project": "java",
+    "url": "https://www.youtube.com/watch?v=TB45qqp-OxM",
+    "minutes": 49
   }
 }
