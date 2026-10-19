@@ -1,6 +1,6 @@
 # java
 
-9 talks · [all digests](../)
+10 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
@@ -12,4 +12,5 @@
 | 2026-10-19 | [High Performance Java Native AI with CUDA and the Vector API by Zoran Sevarac](2026-10-19-high-performance-java-native-ai-with-cuda-and/) · [video](https://www.youtube.com/watch?v=8NURE3I4AJQ) | Zoran Sevarac | 49 min |
 | 2026-10-19 | [Escaping Java's Allocation Gravity with Value Classes By Clément de Tastes, Remi Forax](2026-10-19-escaping-java-s-allocation-gravity-with-value-classes/) · [video](https://www.youtube.com/watch?v=lUB15M3mMLs) | Clément de Tastes, Remi Forax | 51 min |
 | 2026-10-19 | [All you need to know about Maven 4! by Matthias Bünger](2026-10-19-all-you-need-to-know-about-maven-4/) · [video](https://www.youtube.com/watch?v=TgkY2UmWtBo) | Matthias Bünger | 47 min |
+| 2026-10-19 | [AI without spaghetti: Clean architecture in these of AI by Maarten Vandeperre en Lutske van der Mee](2026-10-19-ai-without-spaghetti-clean-architecture-in-these-of/) · [video](https://www.youtube.com/watch?v=E--oDq3X74E) | Maarten Vandeperre en Lutske van der Mee | 46 min |
 | 2026-10-19 | [10 Billion Records vs The Regulator: An Architectural Post Mortem of an 11TB Exadata Failure](2026-10-19-10-billion-records-vs-the-regulator-an-architectural/) · [video](https://www.youtube.com/watch?v=TB45qqp-OxM) | Devoxx | 49 min |
