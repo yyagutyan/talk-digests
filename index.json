@@ -449,5 +449,14 @@
     "project": "java",
     "url": "https://www.youtube.com/watch?v=TB45qqp-OxM",
     "minutes": 49
+  },
+  "lUB15M3mMLs": {
+    "folder": "java/2026-10-19-escaping-java-s-allocation-gravity-with-value-classes",
+    "date": "2026-10-19",
+    "title": "Escaping Java's Allocation Gravity with Value Classes By Clément de Tastes, Remi Forax",
+    "speaker": "Clément de Tastes, Remi Forax",
+    "project": "java",
+    "url": "https://www.youtube.com/watch?v=lUB15M3mMLs",
+    "minutes": 51
   }
 }
