@@ -7,6 +7,7 @@ Projects: [ai-talks](ai-talks/) · [chat](chat/) · [interview](interview/) · [
 | Date | Talk | Speaker | Length | Project |
 |---|---|---|---|---|
 | 2026-10-19 | [We created our own AI orchestrator and it became so much more! by Ricky van Rijn](java/2026-10-19-we-created-our-own-ai-orchestrator-and-it/) · [video](https://www.youtube.com/watch?v=niBYuCuViGw) | Ricky van Rijn | 52 min | [java](java/) |
+| 2026-10-19 | [Taming Microservice Overload: Our Journey to Modular Monoliths by Mario Klaver](java/2026-10-19-taming-microservice-overload-our-journey-to-modular-monoliths/) · [video](https://www.youtube.com/watch?v=v86SfHA5ISw) | Mario Klaver | 50 min | [java](java/) |
 | 2026-10-19 | [Java Next From Valhalla to Leyden, from Babylon to Panama, from Amber to Detroit By Nicolai Parlog](java/2026-10-19-java-next-from-valhalla-to-leyden-from-babylon/) · [video](https://www.youtube.com/watch?v=ufhs9THbYZI) | Nicolai Parlog | 52 min | [java](java/) |
 | 2026-10-19 | [Is AI killing XP practices? Or are we letting it? By Nacho Cougil](java/2026-10-19-is-ai-killing-xp-practices-or-are-we/) · [video](https://www.youtube.com/watch?v=wrV4f83UMWI) | Nacho Cougil | 49 min | [java](java/) |
 | 2026-10-19 | [In the loop , not in the dark: Staying in controlling the era dark software factories By Alex Gavr](java/2026-10-19-in-the-loop-not-in-the-dark-staying/) · [video](https://www.youtube.com/watch?v=jhvT8hVYSvQ) | Alex Gavr | 45 min | [java](java/) |

@@ -458,5 +458,14 @@
     "project": "java",
     "url": "https://www.youtube.com/watch?v=lUB15M3mMLs",
     "minutes": 51
+  },
+  "v86SfHA5ISw": {
+    "folder": "java/2026-10-19-taming-microservice-overload-our-journey-to-modular-monoliths",
+    "date": "2026-10-19",
+    "title": "Taming Microservice Overload: Our Journey to Modular Monoliths by Mario Klaver",
+    "speaker": "Mario Klaver",
+    "project": "java",
+    "url": "https://www.youtube.com/watch?v=v86SfHA5ISw",
+    "minutes": 50
   }
 }
