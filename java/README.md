@@ -1,9 +1,10 @@
 # java
 
-10 talks · [all digests](../)
+11 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
+| 2026-10-20 | [Structured Concurrency Looms](2026-10-20-structured-concurrency-looms/) · [video](https://www.youtube.com/watch?v=oS01pSRWKmg) | Java | 51 min |
 | 2026-10-19 | [We created our own AI orchestrator and it became so much more! by Ricky van Rijn](2026-10-19-we-created-our-own-ai-orchestrator-and-it/) · [video](https://www.youtube.com/watch?v=niBYuCuViGw) | Ricky van Rijn | 52 min |
 | 2026-10-19 | [Taming Microservice Overload: Our Journey to Modular Monoliths by Mario Klaver](2026-10-19-taming-microservice-overload-our-journey-to-modular-monoliths/) · [video](https://www.youtube.com/watch?v=v86SfHA5ISw) | Mario Klaver | 50 min |
 | 2026-10-19 | [Java Next From Valhalla to Leyden, from Babylon to Panama, from Amber to Detroit By Nicolai Parlog](2026-10-19-java-next-from-valhalla-to-leyden-from-babylon/) · [video](https://www.youtube.com/watch?v=ufhs9THbYZI) | Nicolai Parlog | 52 min |

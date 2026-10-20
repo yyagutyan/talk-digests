@@ -485,5 +485,14 @@
     "project": "java",
     "url": "https://www.youtube.com/watch?v=E--oDq3X74E",
     "minutes": 46
+  },
+  "oS01pSRWKmg": {
+    "folder": "java/2026-10-20-structured-concurrency-looms",
+    "date": "2026-10-20",
+    "title": "Structured Concurrency Looms",
+    "speaker": "Java",
+    "project": "java",
+    "url": "https://www.youtube.com/watch?v=oS01pSRWKmg",
+    "minutes": 51
   }
 }
