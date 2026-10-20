@@ -1,10 +1,11 @@
 # java
 
-12 talks · [all digests](../)
+13 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
 | 2026-10-20 | [Structured Concurrency Looms](2026-10-20-structured-concurrency-looms/) · [video](https://www.youtube.com/watch?v=oS01pSRWKmg) | Java | 51 min |
+| 2026-10-20 | [How To Write Great Java Apps With LLMs and Agents](2026-10-20-how-to-write-great-java-apps-with-llms/) · [video](https://www.youtube.com/watch?v=MMIPCyXZDAk) | Java | 56 min |
 | 2026-10-20 | [How does Java fit into the world of AI—and how can it become an even better fit?](2026-10-20-how-does-java-fit-into-the-world-of/) · [video](https://www.youtube.com/watch?v=rL3sWS_8b-g) | Java | 50 min |
 | 2026-10-19 | [We created our own AI orchestrator and it became so much more! by Ricky van Rijn](2026-10-19-we-created-our-own-ai-orchestrator-and-it/) · [video](https://www.youtube.com/watch?v=niBYuCuViGw) | Ricky van Rijn | 52 min |
 | 2026-10-19 | [Taming Microservice Overload: Our Journey to Modular Monoliths by Mario Klaver](2026-10-19-taming-microservice-overload-our-journey-to-modular-monoliths/) · [video](https://www.youtube.com/watch?v=v86SfHA5ISw) | Mario Klaver | 50 min |

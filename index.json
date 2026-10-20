@@ -503,5 +503,14 @@
     "project": "java",
     "url": "https://www.youtube.com/watch?v=rL3sWS_8b-g",
     "minutes": 50
+  },
+  "MMIPCyXZDAk": {
+    "folder": "java/2026-10-20-how-to-write-great-java-apps-with-llms",
+    "date": "2026-10-20",
+    "title": "How To Write Great Java Apps With LLMs and Agents",
+    "speaker": "Java",
+    "project": "java",
+    "url": "https://www.youtube.com/watch?v=MMIPCyXZDAk",
+    "minutes": 56
   }
 }
