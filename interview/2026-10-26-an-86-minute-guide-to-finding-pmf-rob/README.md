@@ -1,45 +1,43 @@
 # An 86-minute guide to finding PMF | Rob Snyder (Author, The Power of Pull)
 
-*Rob Snyder's PULL framework for finding a product that customers buy, from choosing an idea to closing your first deals.*
+*A step-by-step walkthrough of Rob Snyder's PULL framework for finding product-market fit, from choosing an idea to closing your first handful of deals.*
 
-Source: [An 86-minute guide to finding PMF | Rob Snyder (Author, The Power of Pull)](https://www.youtube.com/watch?v=19qrLchbQEc) · Rob Snyder · Lenny's Podcast · 1 h 26 min
+Source: [An 86-minute guide to finding PMF | Rob Snyder (Author, The Power of Pull)](https://www.youtube.com/watch?v=19qrLchbQEc) · Lenny and Rob Snyder · Lenny's Podcast · 1 h 26 min
 
 ## TL;DR
 
-Many founders build products that customers agree are useful but never prioritize buying, which Rob Snyder calls the absence of pull. Pull belongs to one person whose task is urgent and blocked by existing options, and it can be found through firsthand observation and tested with short conversations. Rob's PULL framework (Project, Unavoidable, List of options, Limitations) gives founders a way to check for that buying urgency before building. This matters because a product without pull can consume years of effort with no sales.
+Many early founders build products that people like but never buy, because pain points and value propositions don't create urgency. Rob Snyder argues that real demand is pull: a specific person with a project they must finish now, who is blocked by their current options. He describes the PULL framework (Project, Unavoidable, List of options, Limitations) and a process for testing it through firsthand discovery, cold outreach, and discovery-first sales calls. This matters because it helps founders tell real buying intent from polite interest before they build the wrong product.
 
 ## Key takeaways
 
-- Pull is a specific person's priority: a task they must finish now that their existing tools cannot handle, so they would reprioritize to buy.
-- Pull requires all four PULL conditions at once: a Project, an Unavoidable reason to act now, a List of options they considered, and Limitations that make those options not good enough.
-- Test a pull hypothesis with two slides: restate the buyer's situation and ask 'Is that roughly right?', then outline how you would help, looking for a clear 'Oh my god, yes.'
-- Real buying intent shows up as a pull-shaped action, such as asking how to get started or whether the product exists yet; 'let's think about it' or 'send more information' signals no pull.
-- When interest is lukewarm, ask the Hail Mary question: 'Is there anything on your to-do list that you would pay me to do right now?'
-- Avoid design partners and pilots unless the buyer requires one, since they generate feedback without purchases and signal weak pull.
-- Send about 20 LinkedIn connection requests a day with a short, interesting hook rather than a pitch, and save the pitch for a 30-minute discovery call.
-- Stop pursuing an idea when prospects say the existing options are good enough, and when they have no pull after about five calls, revise the hypothesis and test again.
+- PULL has four parts that must all exist together: a Project to get done, an Unavoidable reason it must happen now, the List of options people consider, and the Limitations that make those options not good enough.
+- Pull is a priority, not a pain point: prospects may agree a product is great but won't reprioritize unless they are blocked from doing the job another way.
+- Pull belongs to an individual, so sell to the specific person who has the problem rather than to a company or segment.
+- Find ideas by working firsthand with the people you want to help; Rob estimates about 90% of the ideas from his roughly 50 companies came from that work, and about 10% from the founder's own experience.
+- Test a pull hypothesis by showing one person a two-slide summary of their situation and asking whether it's them, then talk to about five similar people; real intent sounds like "How do we get started?" rather than "send more information."
+- For cold outreach, send a short, interesting message instead of a pitch or pain question; Rob's targets are 30–40% connection acceptance and 30–50% of those replying, with low acceptance pointing to your profile and low replies pointing to your message.
+- Run the first call as discovery: ask why they took the meeting, book 30 minutes, and leave with a filled-in PULL framework; if after about five calls you learn nothing, change the hypothesis.
+- Sell directly rather than offering free design partnerships, and deliver a service-shaped first version manually while automating behind the scenes; treat mass churn as a signal to work out whether the product or the customer lacks pull.
 
-## Pull is a person's priority, not a company's pain
+## Pull is a priority, not a pain point
 
 [▶ 00:00:00](https://www.youtube.com/watch?v=19qrLchbQEc&t=0s)
 
-Rob's sales call is built to test pull. It follows a fixed sequence, whether it takes two minutes or two hours.
+Lenny interviews Rob Snyder. Rob opens by describing a fixed six-step B2B sales call script he uses to test whether a prospect has pull: he first fills out the PULL framework in discovery, then shifts to supply.
 
 ![Structure of Rob's B2B Sales Call Script](images/01-s002.webp)
 *[▶ 00:00:12](https://www.youtube.com/watch?v=19qrLchbQEc&t=12s) · Structure of Rob's B2B Sales Call Script*
 
-Pull belongs to a person, not a company. You are not selling to SpaceX. You are selling to the head of legal there, who has a project on her to-do list that she cannot finish with her existing tools.
+**Q:** Where does your insight on finding product-market fit come from?
 
-Pull is not pain points, big problems, or differentiated value. Rob's startup had design partners using the product every day and still spent two years pushing it and pivoting aimlessly. Prospects agreed it solved their problems but would not reprioritize to buy it.
+**A:** Rob says he was "punched in the face" trying to go from zero to one as a founder. He later found his way almost by accident, and friends then started asking him to help their startups with the same stage.
 
-Pull comes from priority. A person trying to finish a task now, but stuck with existing tools, is a coiled spring. A product that gets them unstuck gets ripped out of your hands. PULL is the acronym for that pattern.
+**Q:** What is the PULL framework?
 
-The sponsor, WorkOS, turns enterprise requirements such as SSO and audit logs into drop-in APIs.
+**A:** It describes a person who would be weird not to buy your product. Rob found that pain points, big problems and value propositions don't cause pull: prospects agree a product is great but won't drop their priorities to buy it. Pull comes from a priority, a project on someone's to-do list that they can't finish with their current tools. That person is a coiled spring, and a product that unsticks them gets ripped out of your hands. The acronym is covered in the next section.
 
 ![WorkOS feature grid: SSO, user management, auth](images/02-s028.webp)
 *[▶ 00:07:13](https://www.youtube.com/watch?v=19qrLchbQEc&t=433s) · WorkOS feature grid: SSO, user management, auth*
-
-Its Node.js SDK exchanges an SSO code for a user profile and access token, returned as JSON.
 
 ```javascript
 // Get a user's access token and
@@ -73,195 +71,279 @@ Response {...}
 
 *[▶ 00:07:26](https://www.youtube.com/watch?v=19qrLchbQEc&t=446s) · Node.js SDK: getProfileAndToken example and HTTP 200 response*
 
-## Four conditions that make customers buy
+## The four parts of PULL
 
 [▶ 00:07:30](https://www.youtube.com/watch?v=19qrLchbQEc&t=450s)
 
-Pull is an acronym for four conditions. All four must hold at once:
+**Q:** What do the letters of PULL mean?
 
-- **Project**: a job the customer is trying to get done, such as hiring more employees.
-- **Unavoidable**: the customer has to do it now, for a specific reason why now.
-- **List of options**: the alternatives the customer considered.
-- **Limitations**: why those options aren't good enough.
+**A:** The talk defines four parts:
+- **P**: a project, a job to be done.
+- **U**: unavoidable, a task that must happen now, for a stated reason.
+- **L**: the options considered to do the project.
+- **L**: the limitations that make those options not good enough.
 
-Jump, an AI note-taker for financial advisors, found pull this way. Advisors had to take client meeting notes and enter them in their CRM, and failing to do so could land them in jail. Generic AI note-takers fell short because they didn't integrate with the CRM and weren't clearly compliant with SEC rules. Jump's first try with insurance agents failed: agents had the same project but no requirement to log notes, so the unavoidable piece was missing.
+**Q:** Why do the options and limitations matter so much?
 
-Missing one piece means customers complain but don't buy. With a project and an unavoidable need but adequate options, they build the solution themselves.
+**A:** Buyers whose existing options work won't buy. They must be blocked, not merely able to get the job done another way.
 
-## Pull Is Found, Not Created
+**Q:** How did Jump find PULL?
+
+**A:** Jump makes an AI note-taker for financial advisors. Advisors had to write client meeting notes into their CRM and wanted to do it faster. It was unavoidable because skipping it could mean jail. Generic AI note-takers fell short: they didn't integrate with the CRM, and their SEC compliance was unclear. When Jump showed up, prospects ripped the product out of their hands.
+
+**Q:** What happens when a part is missing?
+
+**A:** Jump also talked to insurance agents, who had a similar project but no U, since they weren't required to log notes in a CRM. They were fine without a solution, so the framework didn't fill out. All four parts must exist together.
+
+**Q:** What if a product is struggling?
+
+**A:** Probably one part is missing. With P but no U, buyers complain and don't buy. With P and U but good-enough options, they solve it themselves.
+
+## Finding pull instead of creating it
 
 [▶ 00:13:53](https://www.youtube.com/watch?v=19qrLchbQEc&t=833s)
 
-Pull already exists in a person's to-do list, independent of your product, so you find it rather than create it. In his early days, he assumed he was bad at convincing the market to buy. Realizing that pull exists on its own turned the problem into a search.
+**Q:** Is pull something you create, or does it already exist?
 
-Most prospects are polite but "fine," and that is not pull. A person with pull finds it weird not to buy. Their questions are "How do we get started? Does the product exist yet?" Enthusiasm that never asks to start means pull is missing.
+**A:** Rob says pull already exists, independent of the founder. He once thought he was bad at convincing people to buy, but realizing pull is already there meant he only had to find it. He doubts it can be created.
 
-Pull belongs to a person, not a company. Even enterprise deals start with one individual: the head of legal at a large company who has a project she can't do herself.
+**Q:** How do you tell real pull from polite interest?
 
-To find an idea:
+**A:** A person with pull finds it weird not to buy. They ask how to get started and whether the product exists yet. Others can be enthusiastic and kind, but they never say, "I need this right now."
 
-- Hypothesize a specific person who is stuck.
-- Test whether they try to buy before a product exists.
-- Get in the weeds: go in person or embed with them. Thirty-minute Zoom interviews are not enough.
+**Q:** Is pull a property of a company or of a person?
 
-A friend who wanted to serve small businesses shadowed industries for days at a time. He hated solar panel installers and they hated him. Independent physical therapists were different: he loved them, and watching over their shoulders showed him where they were stuck. He even considered buying a physical therapy franchise to see its P&L.
+**A:** Of a person. Rob says founders often say they sell to a company or segment, but you sell to the individual with the problem, such as the head of legal at SpaceX with a project she can't do herself.
 
-Firsthand experience matters for two reasons. Pull doesn't emerge from a whiteboard or even an interview; it became visible only through observation. And a company exists to serve one kind of person, so you need that experience to make the thousands of decisions that building for them requires.
+**Q:** How should you find a startup idea?
 
-## Testing a pull hypothesis and finding real buying intent
+**A:** Form a specific hypothesis about who is stuck, then test it, ideally before building anything. Rob thinks founders take this stage too lightly. He suggests going in person and experiencing the work firsthand.
+
+**Q:** Can you give an example?
+
+**A:** A friend who wanted to serve small businesses shadowed industries for days at a time. Solar installers didn't work out, but independent physical therapists did. Watching them revealed where they were stuck, which led him to an idea.
+
+**Q:** Why does firsthand experience matter so much?
+
+**A:** Ideas don't come from whiteboards, and a company exists to serve a specific person. Founders need that firsthand understanding to make the many decisions building for them requires.
+
+## Testing Pull with Two Slides and Spotting Real Buyers
 
 [▶ 00:22:34](https://www.youtube.com/watch?v=19qrLchbQEc&t=1354s)
 
-To test a pull hypothesis, use **two slides**. Don't show the [PULL framework](https://thephysicsofstartups.substack.com/p/the-pull-framework) itself, because buyers won't understand it. The first slide restates their situation: "You're trying to do X right now because of Y, and you've considered Z, but it's not good enough for this reason. Is that roughly right?" The second slide outlines how you would help. You want a clear "Oh my god, yes" on the first one.
+**Q:** What do you do once you have a pull hypothesis?
 
-Rob Snyder's fill-in template for the first slide follows the four PULL conditions:
+**A:** Write the insight in PULL form: a specific person, a project they want to do, why it's unavoidable now, and why existing options fall short. Show it to that person and ask, "Is this you?" If they say yes and would buy a fix, talk to about five similar people. Rob Snyder's physical therapy example followed this path, and the five others also pulled.
+
+**Q:** What should the first customer conversation look like?
+
+**A:** Use two slides. The first states what you heard ("You're trying to do X because of Y, you've considered Z, but it isn't good enough because...") and asks if that's roughly right. The second gives a conceptual overview of how you could help. Don't show the framework itself, since no one will follow it. The fill-in template below is what you test with buyers.
 
 ![Four conditions that make buyers pull](images/03-s077.webp)
 *[▶ 00:25:02](https://www.youtube.com/watch?v=19qrLchbQEc&t=1502s) · Four conditions that make buyers pull*
 
-Real intent shows up as a **pull-shaped action**: the buyer asks how to get started now. One pharma executive told a founder, before any product existed, "if you can do that I will pay you right now." Weak signals are "let's think about it," "send more information so our team can review," or "I could see us using this in Q4." Those mean the idea is being pushed into the future.
+**Q:** What counts as real buying intent?
 
-"Solve your own problem" works only when you would have paid someone else to solve it. Emily, who worked in security engineering at AWS, found a problem she would have paid to solve. Be honest about a problem you think the world needs but wouldn't pay for yourself.
+**A:** A buyer who tries to buy: "Okay, cool. How do we get started?" Rob cites a pharma executive who said he would pay right away. Leaned-out enthusiasm, like "send more information" or "we'll think about it," isn't worth chasing. Rob calls the real signal a "pull-shaped action": "I need this now," not "I could see us using this in Q4."
 
-When interest is lukewarm, ask the **Hail Mary** question: "Is there anything on your to-do list that you would pay me to do right now?" One startup selling applicant tracking systems to governments got a reply about job descriptions. That became its first contract.
+**Q:** Is solving your own problem a valid path?
 
-Rob says this question also reframes selling for introverts. You are not persuading anyone. You are checking whether they're stuck on something you can help with.
+**A:** Yes, if you would have paid someone else to solve it. Emily at Clearly AI found a security engineering problem at AWS that she would have paid to have solved. It fails when you wouldn't have paid for the fix and just think the world needs it. Be honest with yourself.
 
-Common traps:
-- Building the product first. With AI this can take weeks, but delay hides the cold reality you need to face.
-- Design partners. In his experience, they give lots of feedback and never buy. People with a real problem want it solved, not a partnership.
+**Q:** Does this apply to consumer products?
 
-Most ideas come from firsthand work. Rob estimates about 90% of the companies he has advised found their idea by doing the work alongside the people affected, and 10% from their own experience.
+**A:** Mostly B2B, but Rob has seen consumer founders use it. Spanx is an example of one-on-one selling used to learn which product details mattered.
+
+**Q:** What do you ask when the reaction is lukewarm?
+
+**A:** The "Hail Mary" question: "Is there anything on your to-do list you'd pay me to take off your plate right now?" Rob has seen startups pivot from it. One team selling applicant tracking systems to governments heard about a job-description task, which became their first contract.
+
+**Q:** What traps should founders avoid?
+
+**A:** Building the product before talking to customers. Rob says AI can shorten the build to weeks, but you should still face customers early. He is also skeptical of design partners: those who give lots of feedback on their vision often never buy, while people with a pressing problem just want it solved.
+
+**Q:** Where do good ideas come from?
+
+**A:** From an "earned secret," a term the host attributes to a Floodgate VC, gained by living with the people you'll help. Rob says the method matters less than learning from reality rather than theory. Across about 50 companies he has worked with, he estimates roughly 10% of ideas came from the founder's own experience and 90% from firsthand work with others. Some first sold the wrong product.
 
 ## Cold outreach to land the first call
 
 [▶ 00:34:46](https://www.youtube.com/watch?v=19qrLchbQEc&t=2086s)
 
-Your first conversations come from cold outreach on LinkedIn or email, using a short, interesting message rather than a pitch. Rob calls this **founder magic**. Templates that name pain points or pitch a product get no replies. The message only needs to earn a call. Whether the prospect has pull is decided on the call, so don't sell in the message.
+**Q:** How do you get a first conversation with no warm intros?
 
-![Measure and benchmark the impact of AI](images/04-s117.webp)
-*[▶ 00:40:54](https://www.youtube.com/watch?v=19qrLchbQEc&t=2454s) · Measure and benchmark the impact of AI*
+**A:** Reach out cold on LinkedIn or email with a short, interesting message, not a pitch or pain question; templates get almost no replies. Rob calls this "founder magic": a line like "Snoop Dogg invested in us, thought you'd find it interesting" works. Choose the hook for your audience. For HVAC owners, a high-school job at a family plumbing company may land better.
 
-Good hooks are simple: "Snoop Dogg invested in us, thought you'd find it interesting, would you be open to chat?" or a founder who dropped out of a PhD to work on something for content marketers. Match the hook to the buyer. For HVAC companies, a family plumbing business in high school may land better than a famous investor.
-
-Personalization isn't needed. AI-written personalization usually restates what the prospect already knows and reads as generated.
-
-Start on LinkedIn. Send 100 to 150 connection requests per week (about 20 a day), then message people when they accept. Expect:
-
-- 30 to 40% accept the connection request
-- 30 to 50% of those reply
-- Most repliers say "yeah, sure, why not"
-
-If acceptance is low, your profile may be the problem. If people accept but don't reply, the message isn't interesting enough.
-
-![Where AI is helping and where it's creating bottlenecks](images/05-s118.webp)
-*[▶ 00:41:00](https://www.youtube.com/watch?v=19qrLchbQEc&t=2460s) · Where AI is helping and where it's creating bottlenecks*
-
-![Monitor costs and licenses](images/06-s119.webp)
+![Monitor costs and licenses](images/04-s119.webp)
 *[▶ 00:41:07](https://www.youtube.com/watch?v=19qrLchbQEc&t=2467s) · Monitor costs and licenses*
 
-## Running the first sales call
+**Q:** Does AI-written personalization help?
+
+**A:** Not at this stage. Rob hasn't seen it work. It restates what the recipient already knows and reads as machine-written. Personalization isn't needed either; a line about attending a conference and pitching is enough.
+
+![Measure and benchmark the impact of AI](images/05-s117.webp)
+*[▶ 00:40:54](https://www.youtube.com/watch?v=19qrLchbQEc&t=2454s) · Measure and benchmark the impact of AI*
+
+**Q:** How many should you send, and what should the numbers look like?
+
+**A:** Start on LinkedIn with about 20 connection requests a day, then message those who accept. Rob's targets: 30–40% accept, 30–50% of those reply, and a subset say yes. Low acceptance points to your profile; low replies point to your message.
+
+![Where AI is helping and where it's creating bottlenecks](images/06-s118.webp)
+*[▶ 00:41:00](https://www.youtube.com/watch?v=19qrLchbQEc&t=2460s) · Where AI is helping and where it's creating bottlenecks*
+
+## Running discovery, not pitching, on the first call
 
 [▶ 00:41:27](https://www.youtube.com/watch?v=19qrLchbQEc&t=2487s)
 
-The first sales call has two parts: pull discovery, then a short pitch of how you might help. Stay curious, not persuasive. A customer with pull will push to buy.
+**Q:** What's the structure of a first sales call?
 
-Run the call in three moves:
+**A:** It has two steps: pull discovery, then a short pitch on how you might help. Go in relaxed and don't try to convince anyone. If they have pull, they'll pull the product out of your hands.
 
-- Thank them and ask why they took the call. They often describe their pull for you.
-- Restate their answer as an agenda and get their agreement.
-- Ask permission for context questions. Once they agree, it doesn't feel like an interrogation.
+**Q:** How do you open the call?
 
-Book 30 minutes; smaller slots get no-shows. Skip demos early, when you may have nothing to show.
+**A:** Ask why they took it. They often describe their pull for you. Turn their answer into an agenda, get their agreement, then ask permission for discovery questions so it doesn't feel like an interrogation.
 
-A call succeeds when you've mapped their pull or learned why they have none. After about five calls with no engagement, something is wrong. One founder's five banking calls went nowhere; a defense referral changed the hypothesis.
+**Q:** How long should the call be, and where does a demo fit?
 
-Sell to learn, not to push. If you feel yourself convincing, that's a red flag.
+**A:** Book 30 minutes, since smaller blocks get no-shows. Early on you likely have no demo. Later, a very short one can fit in the first call.
 
-## Pitch small once the pull is visible
+**Q:** What counts as a good call?
+
+**A:** Either you surface the buyer's pull, or you learn why they have none. You should leave with a filled-in pull framework.
+
+**Q:** When is there no pull?
+
+**A:** Check in after about five calls. If everyone leans back and you learn nothing, something is wrong. One startup with five banking calls and no pull got a defense intro and changed its hypothesis.
+
+**Q:** What mindset should you bring?
+
+**A:** Sell to learn, not to push. If they don't try to buy, you've learned something. If you feel you're convincing them, that's a red flag.
+
+## Pitching on pull, and whether you must be 10x better
 
 [▶ 00:46:56](https://www.youtube.com/watch?v=19qrLchbQEc&t=2816s)
 
-Once you have pull, the pitch is simple. Don't describe a large vision. Restate the customer's problem in small terms, for example: "It sounds like you want to make a website without the hassle of point-and-click tools. Is that roughly it?" If they keep pulling out details, you are onto something.
+**Q:** What does a good sales call and pitch look like?
 
-Shape your questions around the PULL framework. Asking "Is there anything in your QA process you've been unable to do with your existing tools?" surfaces the need and the alternatives in one question. Then test urgency: "Is there a reason you have to do this now?"
+**A:** Get the pull out of the prospect first. One person wanted a website but found point-and-click builders too much effort. Once you have pull, the pitch is one small sentence describing their problem. They then pull more detail out of you, and that is the sign you are on to something.
 
-The scariest question is "Are the other options good enough?" If they say yes, stop. Pushing further risks years spent on a product the market doesn't want.
+**Q:** Do you run the framework in your head during calls?
 
-The status quo is usually fine, so target people for whom it isn't: those already trying to change, who need no convincing.
+**A:** Yes. Asking what they have been unable to do with their existing tools surfaces all the elements. Some people fill in the framework live. The scariest question is "are the other options good enough?" If they say yes, stop rather than push a product the market doesn't want.
 
-Rob doesn't think in terms of "10x." He asks whether the customer is a coiled spring. In his HR software attempt, a better user experience failed because buyers didn't care how the product looked.
+**Q:** Does your product need to be 10 times better than the alternative?
 
-## Closing: return with a concept, price from value, and work back from a deadline
+**A:** Rob doesn't think in 10x. He asks how stuck customers are with their current options. For Jump, generic AI note-takers that fail to do the job make it "infinitely better."
+
+**Q:** Does pull explain why Linear beats Jira on experience?
+
+**A:** Only if a group is blocked by Jira's experience. Rob's better-UX bet failed in HR software, where buyers didn't care about the interface. Stronger pull means faster growth. He has seen an enterprise deal close in about two weeks.
+
+## Closing with a concept, a price, and a service-shaped first sale
 
 [▶ 00:54:08](https://www.youtube.com/watch?v=19qrLchbQEc&t=3248s)
 
-Closing depends on deal size, but the next step is to return with a concept and a plan. In one case, a founder got a Hail Mary intro to a pharma executive, who said current market research was slow. The founder offered to come back in a couple of days with a rough mockup, built quickly, and asked what else was needed to decide. The executive then asked for the price.
+**Q:** What comes after a first call when the prospect wants to buy an early product?
 
-Pricing starts from two bounds: the value of getting the project done, and the cost of the alternatives. If market research consultants cost about $50,000 a year, charging that same amount gives buyers a price they already understand.
+**A:** Come back with a concept and a plan sized to the deal. A pharma-research founder, after a Hail Mary intro, restated the need as faster research that matches current quality. The executive agreed. The founder then vibe-coded a rough mockup within days, got feedback, and was asked for a price. No slides were needed.
 
-In larger organizations, ask the champion when the project must show results, such as "Q1 next year," then work backward through every required step. That date is a **forcing function** for the rest of the sales process.
+**Q:** How do you set price?
 
-Avoid design partnerships that give the product away. They signal weak pull, while buyers with real pull are put off by them. Instead, sell a **service-shaped** offer: an AI product manager, for example, delivered by hand while the automated version is built behind the scenes. This validates the pull and shows what to build. The trade-off is that you can get stuck in a low-margin services business.
+**A:** Use PULL to set bounds: the value of the job, or the cost of current alternatives. If consultants cost about $50,000 a year, pricing near that is intuitive to buyers.
 
-## Test willingness to transact, then iterate or go goblin mode
+**Q:** Beyond fit, what about running the deal?
+
+**A:** In large deals, the champion may need many demos and committee meetings. Ask the champion when the project must show results, then work backward through the steps. That deadline is a forcing function.
+
+**Q:** Should you offer a free design partnership?
+
+**A:** No. Rob says it signals low pull to buyers who have real pull, and it attracts those who don't. Sell directly.
+
+**Q:** Must the full platform exist before selling?
+
+**A:** No. Sell something service-shaped: the team delivers manually while automation is built behind the scenes. Buyers shouldn't expect an enterprise-grade platform yet, and this validates pull and shows what to build.
+
+The host noted that services often become low-margin consulting. Rob agreed it has downsides but expects AI to take over more of this work, and doing it reveals the real problems.
+
+## Testing price, reading weak results, and goblin mode
 
 [▶ 01:00:41](https://www.youtube.com/watch?v=19qrLchbQEc&t=3641s)
 
-Early on, test willingness to transact, not willingness to pay, so don't optimize price with the first customers. For a large first enterprise deal, avoid naming a bare number. Present a case study and ask for a reaction: "Others have paid from $80,000 for a small project up to $1 million, and many land in the middle. How are you thinking about this?" Both sides then react to a shared example.
+**Q:** What price should a founder open with in a first pitch?
 
-If a first batch of calls shows no pull, which is the usual result:
+**A:** Early on, the goal is testing willingness to transact, not maximizing price. For a first enterprise deal where revenue matters, Rob suggests a case-study prompt: say that other customers have paid anywhere from a small project at 80,000 to a million, that most land in the middle, and ask how the buyer thinks about it. Both sides then react to an example rather than the founder proposing a number.
 
-1. Analyze each call and ask whether any showed real pull.
-2. Ask the Hail Mary question: "Is there anything we can do for you right now that's a problem on your to-do list?"
-3. Write a new pull hypothesis and run about five more calls.
-4. Repeat until pull is clear.
+**Q:** What comes after the first batch of sales calls?
 
-**Goblin mode** is a break-glass tactic: an all-out, sometimes unhealthy effort to reach buyers now. One friend scheduled 20 meetings at a single conference. The founder of Tiro, a dental staffing company for hygienists, had his parents go door to door at dental offices to get customer conversations.
+**A:** If prospects have pull, deliver, repeat, and systematize. If responses are odd, review the calls to see whether any showed pull, write a new hypothesis, and test again. Rob says pull is usually absent. He has seen it from the first call only once or twice.
 
-## Onboarding to the moment customers can't go without
+**Q:** What is the Hail Mary question?
+
+**A:** Ask whether there is anything they could help with that is a problem on their to-do list right now. The answer can reveal something worth pursuing.
+
+**Q:** What is "goblin mode"?
+
+**A:** A break-glass tactic: going all out, even in unhealthy ways, to find who will buy now, then forming a hypothesis from the results. Rob can do this only occasionally. A friend building Tiro, a dental staffing company, had his parents visit dental offices door to door to get people to talk to him.
+
+**Q:** How many calls before deciding?
+
+**A:** Roughly five, then assess. With no pull, try a Hail Mary question or goblin mode, form a new hypothesis, run five more calls, and repeat until pull appears.
+
+## Finding the Point Where Customers Stay
 
 [▶ 01:06:56](https://www.youtube.com/watch?v=19qrLchbQEc&t=4016s)
 
-Everyone who buys will churn until they reach a milestone, X, after which quitting would seem weird. Design onboarding as a bullet train that gets every customer there. X is rarely usage or NPS. It is a leading indicator. At Slack, it was an early message count. In his restaurant retention startup, it was an alert about a likely cancellation that customers could act on within two weeks.
+**Q:** What happens after people buy, and how do you design onboarding that keeps them?
 
-Deliver hands-on rather than sending a login. Keep asking, "Are you going to turn now?" until you find the moment customers say they can't live without it.
+**A:** Every buyer churns until they reach a point X, after which churning would be weird. Find X, which is almost never usage or NPS, and design onboarding to get every customer there. Once a few customers say yes, deliver firsthand and keep asking, "Are you going to churn now?" Look for the moment they say they can't live without it.
 
-If most customers churn, find out why. Often one segment keeps using a horizontal product. An AI workflow startup found that freight forwarders stayed and pivoted to them.
+**Q:** How do you tell whether churn means the product isn't working?
 
-## A case study factory for repeatable growth
+**A:** Mass churn must be explained. If 90%+ of customers churn, ask whether the cause is your product or the customer, since that reveals who has pull. One horizontal AI workflow startup found that one or two customer types kept using it, and it pivoted the company to premium freight forwarders.
+
+## Turning traction into a repeatable case study factory
 
 [▶ 01:11:37](https://www.youtube.com/watch?v=19qrLchbQEc&t=4297s)
 
-Rob Snyder's model reduces a startup to one repeated case study: a customer pulls the product before buying ("hell yes") and then stays. Your job is to build a **case study factory** that produces that customer again and again, in three steps:
+**Q:** How do you turn early traction into a repeatable system?
 
-- **Pipeline:** getting people to talk to you.
-- **Sales:** turning prospects into customers.
-- **Delivery:** keeping customers from churning.
+**A:** Think of the startup as one case study repeated: a customer pulls the product before buying and says "hell yes" after. Build a factory for it with three steps: pipeline (getting people to talk to you), sales (turning them into customers), and delivery (keeping them from churning). Using the theory of constraints, find the current bottleneck, focus on it alone, then move on.
 
-Apply the theory of constraints: find the current bottleneck, such as too little pipeline or a low close rate, focus only on it, then move to the next one.
+**Q:** What does "hell yes" mean?
 
-The case study doubles as a sales tool. Prospects who don't resemble it are poor fits, so it qualifies and disqualifies them. You don't have to publish it; the model is what matters. "We don't make software here. We make case studies."
+**A:** A customer who pulls the product out of your hands before buying and uses it as if it were addictive. Your job is to find more clones of them.
 
-Hell-yes customers pull the product out of your hands and use it compulsively. Your job is to find more who are clones of them.
+**Q:** Should you offer pilots, proofs of concept, or design partners?
 
-Skip pilots, proofs of concept and design partners unless the buyer requires one, and don't offer them proactively.
+**A:** No. Go straight to selling and rollout. If a buyer insists on a pilot, accept it, but don't offer one.
 
-Inside established companies, the same process applies to new products. In one new-product leader's experience, ideas that came from customers asking for something on sales calls all worked, while whiteboarded ideas never did. Test each idea with five existing customers and see whether they would buy. Founders should lead this. Non-founders doing zero-to-one work should focus on selling and learn from it.
+**Q:** Does this apply at mature companies launching new products?
 
-When stuck, go into goblin mode: talk to many people, take flights, and hold in-person meetings until something works.
+**A:** Yes. Rob mentions founders selling new features before building them. At one company, a product leader said every idea that worked came from sales calls where customers asked for an extra capability; whiteboarded ideas never worked. Treat each such request as a pull hypothesis and test it with existing customers. Founders should run this; non-founders on zero-to-one work should focus on selling and learning from sales.
 
-## Keep the test simple and avoid tarpit ideas
+**Q:** What if nothing works?
+
+**A:** Try "goblin mode": talk to many people, travel, and take many meetings to find something. Rob calls these emergency moves, since staying stuck is painful.
+
+## Keep it simple and avoid tarpit ideas
 
 [▶ 01:20:03](https://www.youtube.com/watch?v=19qrLchbQEc&t=4803s)
 
-The method is simple: state the pull hypothesis, show it to people, and see whether they try to buy. In Rob's experience, founders over-complicate this by trying to solve every variable in advance. He compares the framework to a metal detector on a beach. It doesn't guarantee metal where you dig, but it beats searching the sand with a spoon.
+**Q:** Anything to stress before the lightning round?
 
-**Tarpit ideas** are markets where a clear winner already exists and the founder has no theory of how to be different. Copying a successful competitor usually fails. The exception is a customer the incumbent doesn't serve, unblocked in a way that justifies something different.
+**A:** Keep it simple: use the framework, show it to people, sell, and see if they try to buy. Rob compares it to a metal detector rather than a spoon. It won't always find value, but it spares you years of building the wrong thing.
 
-"Better" is rarely enough. People buy when they are blocked, not when a product is merely superior. A 100x better printer doesn't sell to someone who isn't blocked.
+**Q:** Which books do you recommend most?
 
-Rob is still developing the framework and asks for feedback. He also writes [The Physics of Startups](https://thephysicsofstartups.substack.com).
+**A:** Christopher Alexander's four-volume *The Nature of Order*, on architecture.
+
+**Q:** What are tarpit ideas, the term Dalton Caldwell uses?
+
+**A:** Entering a space where a clear winner already exists, with no theory of being different. These almost always fail unless you find customers the winner leaves blocked and build something different for them. Rob's printer example: a 100x better printer still wouldn't sell to him, because he isn't blocked.
+
+**Q:** How can listeners help?
+
+**A:** Use the framework, tell others, read the book, and send ideas for improving it. Rob says it is still in development.
 
 ## Links & resources
 
