@@ -6,6 +6,7 @@ Projects: [ai-talks](ai-talks/) · [chat](chat/) · [interview](interview/) · [
 
 | Date | Talk | Speaker | Length | Project |
 |---|---|---|---|---|
+| 2026-10-27 | [Black October Isn't Just A PHP Bug. Attackers Want Your AI Keys.](interview/2026-10-27-black-october-isn-t-just-a-php-bug/) · [video](https://www.youtube.com/watch?v=qDYe2eTl_D4) | AI News & Strategy Daily | Nate B Jones | 26 min | [interview](interview/) |
 | 2026-10-26 | [An 86-minute guide to finding PMF \| Rob Snyder (Author, The Power of Pull)](interview/2026-10-26-an-86-minute-guide-to-finding-pmf-rob/) · [video](https://www.youtube.com/watch?v=19qrLchbQEc) | Lenny's Podcast | 86 min | [interview](interview/) |
 | 2026-10-20 | [Structured Concurrency Looms](java/2026-10-20-structured-concurrency-looms/) · [video](https://www.youtube.com/watch?v=oS01pSRWKmg) | Java | 51 min | [java](java/) |
 | 2026-10-20 | [OOP vs. Data-Oriented Programming: Which One to Choose?](java/2026-10-20-oop-vs-data-oriented-programming-which-one-to/) · [video](https://www.youtube.com/watch?v=EMdxiVYyMtU) | Java | 49 min | [java](java/) |
