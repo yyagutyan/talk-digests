@@ -1,6 +1,6 @@
 # base
 
-24 talks · [all digests](../)
+25 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
@@ -12,6 +12,7 @@
 | 2026-10-29 | [Packing Assistant \| BaseLinker Academy](2026-10-29-packing-assistant-baselinker-academy/) · [video](https://www.youtube.com/watch?v=Y4s-KyvRPyw) | Base | 10 min |
 | 2026-10-29 | [Order list \| BaseLinker Academy](2026-10-29-order-list-baselinker-academy/) · [video](https://www.youtube.com/watch?v=W9g3DWq16Y0) | Base | 6 min |
 | 2026-10-29 | [Order card \| BaseLinker Academy](2026-10-29-order-card-baselinker-academy/) · [video](https://www.youtube.com/watch?v=5-QpZY7GjmA) | Base | 9 min |
+| 2026-10-29 | [Offer templates and shipping templates \| BaseLinker Academy](2026-10-29-offer-templates-and-shipping-templates-baselinker-academy/) · [video](https://www.youtube.com/watch?v=dOlIbfhJpY4) | Base | 4 min |
 | 2026-10-29 | [Listing auctions and offers \| BaseLinker Academy](2026-10-29-listing-auctions-and-offers-baselinker-academy/) · [video](https://www.youtube.com/watch?v=YN3ePbu06kw) | Base | 7 min |
 | 2026-10-29 | [Issuing storage documents, acceptance of a delivery \| BaseLinker Academy](2026-10-29-issuing-storage-documents-acceptance-of-a-delivery-baselinker/) · [video](https://www.youtube.com/watch?v=bD6SOg1Kq0Q) | Base | 8 min |
 | 2026-10-29 | [Issuing invoices and receipts \| BaseLinker Academy](2026-10-29-issuing-invoices-and-receipts-baselinker-academy/) · [video](https://www.youtube.com/watch?v=BHgl1aTzpV8) | Base | 7 min |
