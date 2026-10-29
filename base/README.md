@@ -1,6 +1,6 @@
 # base
 
-21 talks · [all digests](../)
+22 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
@@ -24,4 +24,5 @@
 | 2026-10-29 | [Contact with the BaseLinker support team \| BaseLinker Academy](2026-10-29-contact-with-the-baselinker-support-team-baselinker-academy/) · [video](https://www.youtube.com/watch?v=WY2xxIAXE9Q) | Base | 2 min |
 | 2026-10-29 | [Communication with the client \| BaseLinker Academy](2026-10-29-communication-with-the-client-baselinker-academy/) · [video](https://www.youtube.com/watch?v=rHpkNrvYjiY) | Base | 6 min |
 | 2026-10-29 | [Associating auctions with storage products \| BaseLinker Academy](2026-10-29-associating-auctions-with-storage-products-baselinker-academy/) · [video](https://www.youtube.com/watch?v=bxGSIW05AD4) | Base | 5 min |
+| 2026-10-29 | [Adding / editing product bundles \| BaseLinker Academy](2026-10-29-adding-editing-product-bundles-baselinker-academy/) · [video](https://www.youtube.com/watch?v=c-PLehpe6e0) | Base | 5 min |
 | 2026-10-29 | [Adding / editing a product from the panel \| BaseLinker Academy](2026-10-29-adding-editing-a-product-from-the-panel-baselinker/) · [video](https://www.youtube.com/watch?v=5i7wkwgiljs) | Base | 7 min |
