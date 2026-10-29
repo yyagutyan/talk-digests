@@ -1,9 +1,10 @@
 # base
 
-11 talks · [all digests](../)
+12 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
+| 2026-10-29 | [Performing actions on auctions / offers \| BaseLinker Academy](2026-10-29-performing-actions-on-auctions-offers-baselinker-academy/) · [video](https://www.youtube.com/watch?v=5PaKKSCJGDE) | Base | 5 min |
 | 2026-10-29 | [Packing Assistant \| BaseLinker Academy](2026-10-29-packing-assistant-baselinker-academy/) · [video](https://www.youtube.com/watch?v=Y4s-KyvRPyw) | Base | 10 min |
 | 2026-10-29 | [Order list \| BaseLinker Academy](2026-10-29-order-list-baselinker-academy/) · [video](https://www.youtube.com/watch?v=W9g3DWq16Y0) | Base | 6 min |
 | 2026-10-29 | [Order card \| BaseLinker Academy](2026-10-29-order-card-baselinker-academy/) · [video](https://www.youtube.com/watch?v=5-QpZY7GjmA) | Base | 9 min |
