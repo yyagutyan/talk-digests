@@ -1,6 +1,6 @@
 # base
 
-6 talks · [all digests](../)
+7 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
@@ -10,3 +10,4 @@
 | 2026-10-29 | [Introduction to the BaseLinker panel \| BaseLinker Academy](2026-10-29-introduction-to-the-baselinker-panel-baselinker-academy/) · [video](https://www.youtube.com/watch?v=6kElBBsrhS0) | Base | 2 min |
 | 2026-10-29 | [Importing transfers and downloads \| BaseLinker Academy](2026-10-29-importing-transfers-and-downloads-baselinker-academy/) · [video](https://www.youtube.com/watch?v=VKRGXTCehl4) | Base | 3 min |
 | 2026-10-29 | [Filtering auctions and offers \| BaseLinker Academy](2026-10-29-filtering-auctions-and-offers-baselinker-academy/) · [video](https://www.youtube.com/watch?v=uajSYL-aggc) | Base | 4 min |
+| 2026-10-29 | [Favorite categories \| BaseLinker Academy](2026-10-29-favorite-categories-baselinker-academy/) · [video](https://www.youtube.com/watch?v=X0uLwc69bEo) | Base | 3 min |
