@@ -1,6 +1,6 @@
 # base
 
-13 talks · [all digests](../)
+14 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
@@ -13,6 +13,7 @@
 | 2026-10-29 | [Invoice editing and correction \| BaseLinker Academy](2026-10-29-invoice-editing-and-correction-baselinker-academy/) · [video](https://www.youtube.com/watch?v=9DvE7uYDpX0) | Base | 8 min |
 | 2026-10-29 | [Introduction to the BaseLinker panel \| BaseLinker Academy](2026-10-29-introduction-to-the-baselinker-panel-baselinker-academy/) · [video](https://www.youtube.com/watch?v=6kElBBsrhS0) | Base | 2 min |
 | 2026-10-29 | [Importing transfers and downloads \| BaseLinker Academy](2026-10-29-importing-transfers-and-downloads-baselinker-academy/) · [video](https://www.youtube.com/watch?v=VKRGXTCehl4) | Base | 3 min |
+| 2026-10-29 | [Importing auctions and products \| BaseLinker Academy](2026-10-29-importing-auctions-and-products-baselinker-academy/) · [video](https://www.youtube.com/watch?v=Lwg4LD_9Igg) | Base | 3 min |
 | 2026-10-29 | [Filtering auctions and offers \| BaseLinker Academy](2026-10-29-filtering-auctions-and-offers-baselinker-academy/) · [video](https://www.youtube.com/watch?v=uajSYL-aggc) | Base | 4 min |
 | 2026-10-29 | [Favorite categories \| BaseLinker Academy](2026-10-29-favorite-categories-baselinker-academy/) · [video](https://www.youtube.com/watch?v=X0uLwc69bEo) | Base | 3 min |
 | 2026-10-29 | [Contact with the BaseLinker support team \| BaseLinker Academy](2026-10-29-contact-with-the-baselinker-support-team-baselinker-academy/) · [video](https://www.youtube.com/watch?v=WY2xxIAXE9Q) | Base | 2 min |
