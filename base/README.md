@@ -1,6 +1,6 @@
 # base
 
-26 talks · [all digests](../)
+27 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
@@ -28,5 +28,6 @@
 | 2026-10-29 | [Communication with the client \| BaseLinker Academy](2026-10-29-communication-with-the-client-baselinker-academy/) · [video](https://www.youtube.com/watch?v=rHpkNrvYjiY) | Base | 6 min |
 | 2026-10-29 | [Category and product associations \| BaseLinker Academy](2026-10-29-category-and-product-associations-baselinker-academy/) · [video](https://www.youtube.com/watch?v=zA_bIELyg60) | Base | 2 min |
 | 2026-10-29 | [Associating auctions with storage products \| BaseLinker Academy](2026-10-29-associating-auctions-with-storage-products-baselinker-academy/) · [video](https://www.youtube.com/watch?v=bxGSIW05AD4) | Base | 5 min |
+| 2026-10-29 | [Adding parameters during the listing \| BaseLinker Academy](2026-10-29-adding-parameters-during-the-listing-baselinker-academy/) · [video](https://www.youtube.com/watch?v=MjaIGhJ_VIs) | Base | 6 min |
 | 2026-10-29 | [Adding / editing product bundles \| BaseLinker Academy](2026-10-29-adding-editing-product-bundles-baselinker-academy/) · [video](https://www.youtube.com/watch?v=c-PLehpe6e0) | Base | 5 min |
 | 2026-10-29 | [Adding / editing a product from the panel \| BaseLinker Academy](2026-10-29-adding-editing-a-product-from-the-panel-baselinker/) · [video](https://www.youtube.com/watch?v=5i7wkwgiljs) | Base | 7 min |
