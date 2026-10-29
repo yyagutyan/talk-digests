@@ -1,6 +1,6 @@
 # base
 
-12 talks · [all digests](../)
+13 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
@@ -8,6 +8,7 @@
 | 2026-10-29 | [Packing Assistant \| BaseLinker Academy](2026-10-29-packing-assistant-baselinker-academy/) · [video](https://www.youtube.com/watch?v=Y4s-KyvRPyw) | Base | 10 min |
 | 2026-10-29 | [Order list \| BaseLinker Academy](2026-10-29-order-list-baselinker-academy/) · [video](https://www.youtube.com/watch?v=W9g3DWq16Y0) | Base | 6 min |
 | 2026-10-29 | [Order card \| BaseLinker Academy](2026-10-29-order-card-baselinker-academy/) · [video](https://www.youtube.com/watch?v=5-QpZY7GjmA) | Base | 9 min |
+| 2026-10-29 | [Listing auctions and offers \| BaseLinker Academy](2026-10-29-listing-auctions-and-offers-baselinker-academy/) · [video](https://www.youtube.com/watch?v=YN3ePbu06kw) | Base | 7 min |
 | 2026-10-29 | [Issuing invoices and receipts \| BaseLinker Academy](2026-10-29-issuing-invoices-and-receipts-baselinker-academy/) · [video](https://www.youtube.com/watch?v=BHgl1aTzpV8) | Base | 7 min |
 | 2026-10-29 | [Invoice editing and correction \| BaseLinker Academy](2026-10-29-invoice-editing-and-correction-baselinker-academy/) · [video](https://www.youtube.com/watch?v=9DvE7uYDpX0) | Base | 8 min |
 | 2026-10-29 | [Introduction to the BaseLinker panel \| BaseLinker Academy](2026-10-29-introduction-to-the-baselinker-panel-baselinker-academy/) · [video](https://www.youtube.com/watch?v=6kElBBsrhS0) | Base | 2 min |
