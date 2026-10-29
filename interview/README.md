@@ -1,9 +1,10 @@
 # interview
 
-10 talks · [all digests](../)
+11 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
+| 2026-10-29 | [Реакция: Как найти работу в ИТ сегодня](2026-10-29-reaktsiya-kak-nayti-rabotu-v-it-segodnya/) · [video](https://www.youtube.com/watch?v=eqvmXci-o38) | apakhomov | 98 min |
 | 2026-10-29 | [I Read Goodfire's New Essay. AI May Be Far Easier To Understand Than We Thought.](2026-10-29-i-read-goodfire-s-new-essay-ai-may/) · [video](https://www.youtube.com/watch?v=15gxN8DnC8s) | AI News & Strategy Daily | Nate B Jones | 20 min |
 | 2026-10-29 | [Are Your AI Agents Doing Real Work Or Productivity Theater? Here Are 4 Principles I Use.](2026-10-29-are-your-ai-agents-doing-real-work-or/) · [video](https://www.youtube.com/watch?v=NIRFVjttNvA) | AI News & Strategy Daily | Nate B Jones | 19 min |
 | 2026-10-29 | [Anthropic Just Filed Its S-1. Here's What The Headlines Are Missing.](2026-10-29-anthropic-just-filed-its-s-1-here-s/) · [video](https://www.youtube.com/watch?v=EAEixlPC6L4) | AI News & Strategy Daily | Nate B Jones | 32 min |
