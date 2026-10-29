@@ -7,6 +7,7 @@ Projects: [ai-talks](ai-talks/) · [base](base/) · [chat](chat/) · [interview]
 | Date | Talk | Speaker | Length | Project |
 |---|---|---|---|---|
 | 2026-10-29 | [I Read Goodfire's New Essay. AI May Be Far Easier To Understand Than We Thought.](interview/2026-10-29-i-read-goodfire-s-new-essay-ai-may/) · [video](https://www.youtube.com/watch?v=15gxN8DnC8s) | AI News & Strategy Daily | Nate B Jones | 20 min | [interview](interview/) |
+| 2026-10-29 | [Are Your AI Agents Doing Real Work Or Productivity Theater? Here Are 4 Principles I Use.](interview/2026-10-29-are-your-ai-agents-doing-real-work-or/) · [video](https://www.youtube.com/watch?v=NIRFVjttNvA) | AI News & Strategy Daily | Nate B Jones | 19 min | [interview](interview/) |
 | 2026-10-29 | [Anthropic Just Filed Its S-1. Here's What The Headlines Are Missing.](interview/2026-10-29-anthropic-just-filed-its-s-1-here-s/) · [video](https://www.youtube.com/watch?v=EAEixlPC6L4) | AI News & Strategy Daily | Nate B Jones | 32 min | [interview](interview/) |
 | 2026-10-29 | [Order list \| BaseLinker Academy](base/2026-10-29-order-list-baselinker-academy/) · [video](https://www.youtube.com/watch?v=W9g3DWq16Y0) | Base | 6 min | [base](base/) |
 | 2026-10-29 | [Introduction to the BaseLinker panel \| BaseLinker Academy](base/2026-10-29-introduction-to-the-baselinker-panel-baselinker-academy/) · [video](https://www.youtube.com/watch?v=6kElBBsrhS0) | Base | 2 min | [base](base/) |
