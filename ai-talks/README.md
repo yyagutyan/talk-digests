@@ -1,9 +1,10 @@
 # ai-talks
 
-7 talks · [all digests](../)
+8 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
+| 2026-10-30 | [When to Build Your Own Agent Harness \| Harrison Chase, LangChain](2026-10-30-when-to-build-your-own-agent-harness-harrison/) · [video](https://www.youtube.com/watch?v=HI2q3ci3Iuc) | Sequoia Capital | 24 min |
 | 2026-10-30 | [How to Write Your First AI Eval - SallyAnn DeLucia, Arize AI](2026-10-30-how-to-write-your-first-ai-eval-sallyann/) · [video](https://www.youtube.com/watch?v=gv4w23xYj-0) | AI Engineer | 35 min |
 | 2026-10-30 | [How Companies Are Building Their Own Intelligence \| Sonya Huang, Sequoia Capital](2026-10-30-how-companies-are-building-their-own-intelligence-sonya/) · [video](https://www.youtube.com/watch?v=bMMv0bZzONg) | Sequoia Capital | 17 min |
 | 2026-10-12 | [Stanford CME295 Transformers & LLMs \| Autumn 2026 \| Lecture 2 - Large Language Models](2026-10-12-stanford-cme295-transformers-llms-autumn-2026-lecture-2/) · [video](https://www.youtube.com/watch?v=GaIeu3npx04) | Stanford Online | 103 min |

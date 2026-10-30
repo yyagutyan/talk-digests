@@ -863,5 +863,14 @@
     "project": "ai-talks",
     "url": "https://www.youtube.com/watch?v=bMMv0bZzONg",
     "minutes": 17
+  },
+  "HI2q3ci3Iuc": {
+    "folder": "ai-talks/2026-10-30-when-to-build-your-own-agent-harness-harrison",
+    "date": "2026-10-30",
+    "title": "When to Build Your Own Agent Harness | Harrison Chase, LangChain",
+    "speaker": "Sequoia Capital",
+    "project": "ai-talks",
+    "url": "https://www.youtube.com/watch?v=HI2q3ci3Iuc",
+    "minutes": 24
   }
 }
