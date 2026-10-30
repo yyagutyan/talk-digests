@@ -881,5 +881,14 @@
     "project": "ai-talks",
     "url": "https://www.youtube.com/watch?v=eRrc1pUY5oU",
     "minutes": 42
+  },
+  "eYrMF9Cht8A": {
+    "folder": "ai-talks/2026-10-30-continual-learning-how-ai-agents-get-better-with",
+    "date": "2026-10-30",
+    "title": "Continual Learning: How AI Agents Get Better With Every Use | Arjun Karanam, Trajectory",
+    "speaker": "Sequoia Capital",
+    "project": "ai-talks",
+    "url": "https://www.youtube.com/watch?v=eYrMF9Cht8A",
+    "minutes": 22
   }
 }
