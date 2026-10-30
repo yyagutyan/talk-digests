@@ -6,6 +6,7 @@ Projects: [ai-talks](ai-talks/) · [base](base/) · [chat](chat/) · [interview]
 
 | Date | Talk | Speaker | Length | Project |
 |---|---|---|---|---|
+| 2026-10-30 | [How to Write Your First AI Eval - SallyAnn DeLucia, Arize AI](ai-talks/2026-10-30-how-to-write-your-first-ai-eval-sallyann/) · [video](https://www.youtube.com/watch?v=gv4w23xYj-0) | AI Engineer | 35 min | [ai-talks](ai-talks/) |
 | 2026-10-29 | [Реакция: Как найти работу в ИТ сегодня](interview/2026-10-29-reaktsiya-kak-nayti-rabotu-v-it-segodnya/) · [video](https://www.youtube.com/watch?v=eqvmXci-o38) | apakhomov | 98 min | [interview](interview/) |
 | 2026-10-29 | [I Read Goodfire's New Essay. AI May Be Far Easier To Understand Than We Thought.](interview/2026-10-29-i-read-goodfire-s-new-essay-ai-may/) · [video](https://www.youtube.com/watch?v=15gxN8DnC8s) | AI News & Strategy Daily | Nate B Jones | 20 min | [interview](interview/) |
 | 2026-10-29 | [Are Your AI Agents Doing Real Work Or Productivity Theater? Here Are 4 Principles I Use.](interview/2026-10-29-are-your-ai-agents-doing-real-work-or/) · [video](https://www.youtube.com/watch?v=NIRFVjttNvA) | AI News & Strategy Daily | Nate B Jones | 19 min | [interview](interview/) |

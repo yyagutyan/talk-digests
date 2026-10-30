@@ -845,5 +845,14 @@
     "project": "base",
     "url": "https://www.youtube.com/watch?v=MjaIGhJ_VIs",
     "minutes": 6
+  },
+  "gv4w23xYj-0": {
+    "folder": "ai-talks/2026-10-30-how-to-write-your-first-ai-eval-sallyann",
+    "date": "2026-10-30",
+    "title": "How to Write Your First AI Eval - SallyAnn DeLucia, Arize AI",
+    "speaker": "AI Engineer",
+    "project": "ai-talks",
+    "url": "https://www.youtube.com/watch?v=gv4w23xYj-0",
+    "minutes": 35
   }
 }
