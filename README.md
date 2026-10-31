@@ -6,6 +6,7 @@ Projects: [ai-talks](ai-talks/) · [base](base/) · [chat](chat/) · [interview]
 
 | Date | Talk | Speaker | Length | Project |
 |---|---|---|---|---|
+| 2026-10-31 | [Why Own Your Intelligence? Harrison Chase Keynote \| Interrupt London](ai-talks/2026-10-31-why-own-your-intelligence-harrison-chase-keynote-interrupt/) · [video](https://www.youtube.com/watch?v=XOUSuxY074U) | LangChain | 35 min | [ai-talks](ai-talks/) |
 | 2026-10-30 | [When to Build Your Own Agent Harness \| Harrison Chase, LangChain](ai-talks/2026-10-30-when-to-build-your-own-agent-harness-harrison/) · [video](https://www.youtube.com/watch?v=HI2q3ci3Iuc) | Sequoia Capital | 24 min | [ai-talks](ai-talks/) |
 | 2026-10-30 | [How to Write Your First AI Eval - SallyAnn DeLucia, Arize AI](ai-talks/2026-10-30-how-to-write-your-first-ai-eval-sallyann/) · [video](https://www.youtube.com/watch?v=gv4w23xYj-0) | AI Engineer | 35 min | [ai-talks](ai-talks/) |
 | 2026-10-30 | [How Companies Are Building Their Own Intelligence \| Sonya Huang, Sequoia Capital](ai-talks/2026-10-30-how-companies-are-building-their-own-intelligence-sonya/) · [video](https://www.youtube.com/watch?v=bMMv0bZzONg) | Sequoia Capital | 17 min | [ai-talks](ai-talks/) |
