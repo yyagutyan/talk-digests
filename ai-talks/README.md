@@ -1,6 +1,6 @@
 # ai-talks
 
-15 talks · [all digests](../)
+16 talks · [all digests](../)
 
 | Date | Talk | Speaker | Length |
 |---|---|---|---|
@@ -8,6 +8,7 @@
 | 2026-11-04 | [Why AI Makes You 100x Faster but Not Your Company - Mitchell Troyanovsky, Basis](2026-11-04-why-ai-makes-you-100x-faster-but-not/) · [video](https://www.youtube.com/watch?v=JGtkTjn4120) | AI Engineer | 19 min |
 | 2026-11-04 | [The Future Of The Internet Isn't Open For Your Agent. Muse, Dots And Claude Duet Will Find Out.](2026-11-04-the-future-of-the-internet-isn-t-open/) · [video](https://www.youtube.com/watch?v=c3HHFL_lsLM) | AI News & Strategy Daily | Nate B Jones | 28 min |
 | 2026-11-04 | [Make Your AI Agents Predictable With Graph Engineering - Zachary Blumenfeld, Neo4j](2026-11-04-make-your-ai-agents-predictable-with-graph-engineering/) · [video](https://www.youtube.com/watch?v=g_NgCLTibiM) | AI Engineer | 21 min |
+| 2026-11-04 | [Локальный AI для программирования \| DeepSeek, Qwen, ИИ агенты \| Podlodka Podcast #501](2026-11-04-lokalnyy-ai-dlya-programmirovaniya-deepseek-qwen-ii-agenty/) · [video](https://www.youtube.com/watch?v=v_W6F-HLdeo) | Podlodka | 136 min |
 | 2026-10-31 | [Why Own Your Intelligence? Harrison Chase Keynote \| Interrupt London](2026-10-31-why-own-your-intelligence-harrison-chase-keynote-interrupt/) · [video](https://www.youtube.com/watch?v=XOUSuxY074U) | LangChain | 35 min |
 | 2026-10-30 | [When to Build Your Own Agent Harness \| Harrison Chase, LangChain](2026-10-30-when-to-build-your-own-agent-harness-harrison/) · [video](https://www.youtube.com/watch?v=HI2q3ci3Iuc) | Sequoia Capital | 24 min |
 | 2026-10-30 | [How to Write Your First AI Eval - SallyAnn DeLucia, Arize AI](2026-10-30-how-to-write-your-first-ai-eval-sallyann/) · [video](https://www.youtube.com/watch?v=gv4w23xYj-0) | AI Engineer | 35 min |
