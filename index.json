@@ -917,5 +917,14 @@
     "project": "ai-talks",
     "url": "https://www.youtube.com/watch?v=JFoDdKuRmSk",
     "minutes": 22
+  },
+  "g_NgCLTibiM": {
+    "folder": "ai-talks/2026-11-04-make-your-ai-agents-predictable-with-graph-engineering",
+    "date": "2026-11-04",
+    "title": "Make Your AI Agents Predictable With Graph Engineering - Zachary Blumenfeld, Neo4j",
+    "speaker": "AI Engineer",
+    "project": "ai-talks",
+    "url": "https://www.youtube.com/watch?v=g_NgCLTibiM",
+    "minutes": 21
   }
 }
