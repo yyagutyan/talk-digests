@@ -6,6 +6,7 @@ Projects: [ai-talks](ai-talks/) · [base](base/) · [chat](chat/) · [interview]
 
 | Date | Talk | Speaker | Length | Project |
 |---|---|---|---|---|
+| 2026-11-04 | [You've Never Lost $19 Billion. So Why Are You Playing It Safer Than Zuckerberg?](ai-talks/2026-11-04-you-ve-never-lost-19-billion-so-why/) · [video](https://www.youtube.com/watch?v=JFoDdKuRmSk) | AI News & Strategy Daily | Nate B Jones | 22 min | [ai-talks](ai-talks/) |
 | 2026-11-04 | [Why AI Makes You 100x Faster but Not Your Company - Mitchell Troyanovsky, Basis](ai-talks/2026-11-04-why-ai-makes-you-100x-faster-but-not/) · [video](https://www.youtube.com/watch?v=JGtkTjn4120) | AI Engineer | 19 min | [ai-talks](ai-talks/) |
 | 2026-10-31 | [Why Own Your Intelligence? Harrison Chase Keynote \| Interrupt London](ai-talks/2026-10-31-why-own-your-intelligence-harrison-chase-keynote-interrupt/) · [video](https://www.youtube.com/watch?v=XOUSuxY074U) | LangChain | 35 min | [ai-talks](ai-talks/) |
 | 2026-10-30 | [When to Build Your Own Agent Harness \| Harrison Chase, LangChain](ai-talks/2026-10-30-when-to-build-your-own-agent-harness-harrison/) · [video](https://www.youtube.com/watch?v=HI2q3ci3Iuc) | Sequoia Capital | 24 min | [ai-talks](ai-talks/) |
